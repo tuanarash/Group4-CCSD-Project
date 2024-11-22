@@ -19,19 +19,17 @@ import SmartToyOutlinedIcon from '@mui/icons-material/SmartToyOutlined';
 
 import CK from '../../../Editor/ck';
 
-
 const AddWebsiteGallery = () => {
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
-    const [image, setImage] = useState(null);
+    const [galleryImageTitle, setgalleryImageTitle] = useState(null);
+    const [gallerySlug, setGallerySlug] = useState(null);
+    const [galleryDate, setGalleryDate] = useState(null);
+    const [galleryStatus, setGalleryStatus] = useState(null);
+    const [galleryTags, setGalleryTags] = useState(null);
+    const [galleryTextPlace, setgalleryTextPlace] = useState(null);
+    const [galleryImageLocation, setgalleryImageLocation] = useState(null);
 
-    const [categories, setCategories] = useState([]); // to store the list of categories    
-    const [postShortDescription, setPostShortDescription] = useState(null);
-    const [tag, setTag] = useState(null);
-    const [title, setTitle] = useState(null);
-    const [postSlug, setPostSlug] = useState(null);
-    const [status, setStatus] = useState(null);
-    const [date, setDate] = useState(null);
     const navigate = useNavigate();
     const [openAiImage, setOpenAiImage] = useState(false);
     const [place, setPlace] = useState(null);
@@ -68,7 +66,13 @@ const AddWebsiteGallery = () => {
         event.preventDefault(); // Prevent the default form submission behavior
       
         try {
-          const success = await SaveItemsAdmin.addGalleryAdmin(place, postShortDescription, tag, title, postSlug, content, status, date, image);
+          const success = await SaveItemsAdmin.addGalleryAdmin(galleryImageTitle,
+            gallerySlug,
+            galleryDate,
+            galleryStatus,
+            galleryTags,
+            galleryTextPlace,
+            galleryImageLocation);
           
           if (success) {
             navigate("/website-components-admin");
@@ -107,14 +111,14 @@ const AddWebsiteGallery = () => {
                 <TextField
                 onChange={(e) => setTitle(e.target.value)}
                 label="Enter Image Title"
-                id="title"
+                id="galleryImageTitle"
                 sx={{ m: 1, width: '30.5%' }}
                 variant="filled"
                 />
                 <FormControl sx={{ m: 1, width: '30.5%' }} variant="filled">
                     <FilledInput
-                    onChange={(e) => setDate(e.target.value)}
-                        id='date'
+                    onChange={(e) => setgalleryDate(e.target.value)}
+                        id='gallerydate'
                         type='date'
                                             
                     >
@@ -123,12 +127,12 @@ const AddWebsiteGallery = () => {
                 <FormHelperText id="filled-dob-helper-text">publish Date</FormHelperText>
                 </FormControl>
                 <FormControl sx={{ m: 1, width: '15.5%' }} variant="filled">
-                    <InputLabel id="status">Status</InputLabel>
+                    <InputLabel id="galleryStatus">Status</InputLabel>
                     <Select
-                        labelId="status"
-                        id="status"
-                        value={status}
-                        label="status"
+                        labelId="galleryStatus"
+                        id="galleryStatus"
+                        value={galleryStatus}
+                        label="galleryStatus"
                         onChange={handleChange}
                     >
                         <MenuItem value={0}>Draft</MenuItem>
@@ -139,14 +143,14 @@ const AddWebsiteGallery = () => {
                 <FormControl sx={{ m: 1, width: '60%' }} variant="filled">
                 <InputLabel htmlFor="filled-adornment-address">Tags</InputLabel>
                 <FilledInput
-                   onChange={(e) => setTag(e.target.value)}
-                    id='tag'
+                   onChange={(e) => setgalleryTags(e.target.value)}
+                    id='galleryTags'
                     type='text'
                     endAdornment = {
                         <InputAdornment position='end'>
                             Use AI to Generate SEO Tags
                             <IconButton
-                                aria-label="tag"
+                                aria-label="galleryTags"
                                 edge="end"                                        
                             >
                             <SmartToyOutlinedIcon></SmartToyOutlinedIcon>
@@ -158,12 +162,12 @@ const AddWebsiteGallery = () => {
                 </FilledInput>
                 </FormControl>
                 <FormControl sx={{ m: 1, width: '15.5%' }} variant="filled">
-                    <InputLabel id="place">Text Place</InputLabel>
+                    <InputLabel id="galleryTextPlace">Text Place</InputLabel>
                     <Select
-                        labelId="place"
-                        id="place"
-                        value={place}
-                        label="place"
+                        labelId="galleryTextPlace"
+                        id="galleryTextPlace"
+                        value={galleryTextPlace}
+                        label="galleryTextPlace"
                         onChange={handleChangeplace}
                     >
                         <MenuItem value={1}>1</MenuItem>
@@ -183,7 +187,7 @@ const AddWebsiteGallery = () => {
                 <FormControl sx={{ m: 1, width: '45%' }} variant="filled">
                     <Input
                         accept="image/*"
-                        id="image-upload"
+                        id="galleryImageLocation"
                         type="file"
                         htmlFor="image-upload"
                         onChange={handleImageChange}

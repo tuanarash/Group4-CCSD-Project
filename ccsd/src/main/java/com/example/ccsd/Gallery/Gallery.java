@@ -12,26 +12,26 @@ import org.springframework.data.annotation.Id;
 public class Gallery{
     @Id
     private String id;
-    private String galleryTitle;
+    private String galleryImageTitle;
     private String gallerySlug;
     private Date galleryDate;
     private String galleryStatus;
     private List<String> galleryTags;
-    private String galleryDescription;
-    private String galleryImage;
+    private String galleryTextPlace;
+    private String galleryImageLocation;
 
     //Constructors
     public Gallery() {}
 
-    public Gallery(String galleryTitle, String gallerySlug, Date galleryDate, String galleryStatus, 
-    List<String> galleryTags, String galleryDescription, String galleryImage) {
-        this.galleryTitle = galleryTitle;
+    public Gallery(String galleryImageTitle, String gallerySlug, Date galleryDate, String galleryStatus, 
+    List<String> galleryTags, String galleryTextPlace, String galleryImageLocation) {
+        this.galleryImageTitle = galleryImageTitle;
         this.gallerySlug = gallerySlug;
         this.galleryDate = galleryDate;
         this.galleryStatus = galleryStatus;
         this.galleryTags = galleryTags;
-        this.galleryDescription = galleryDescription;
-        this.galleryImage = galleryImage;
+        this.galleryTextPlace = galleryTextPlace;
+        this.galleryImageLocation = galleryImageLocation;
     }
 
     // Getters and Setters
@@ -43,12 +43,12 @@ public class Gallery{
         this.id = id;
     }
 
-    public String getgalleryTitle() {
-        return galleryTitle;
+    public String getgalleryImageTitle() {
+        return galleryImageTitle;
     }
 
-    public void setgalleryTitle(String galleryTitle) {
-        this.galleryTitle = galleryTitle;
+    public void setgalleryImageTitle(String galleryImageTitle) {
+        this.galleryImageTitle = galleryImageTitle;
     }
 
     public String getgallerySlug() {
@@ -83,20 +83,20 @@ public class Gallery{
         this.galleryTags = galleryTags;
     }
 
-    public String getgalleryDescription() {
-        return galleryDescription;
+    public String getgalleryTextPlace() {
+        return galleryTextPlace;
     }
 
-    public void setgalleryDescription(String galleryDescription) {
-        this.galleryDescription = galleryDescription;
+    public void setgalleryTextPlace(String galleryTextPlace) {
+        this.galleryTextPlace = galleryTextPlace;
     }
 
-    public String getgalleryImage() {
-        return galleryImage;
+    public String getgalleryImageLocation() {
+        return galleryImageLocation;
     }
 
-    public void setgalleryImage(String galleryImage) {
-        this.galleryImage = galleryImage;
+    public void setgalleryImageLocation(String galleryImageLocation) {
+        this.galleryImageLocation = galleryImageLocation;
     }
 
 }

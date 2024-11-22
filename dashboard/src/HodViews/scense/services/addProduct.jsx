@@ -23,16 +23,17 @@ import CK from '../../../Editor/ck';
 const AddProduct = () => {
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
-    const [image, setImage] = useState(null);
+    const [productImage, setProductImage] = useState(null);
 
-    const [categories, setCategories] = useState([]); // to store the list of categories    
-    const [postShortDescription, setPostShortDescription] = useState(null);
-    const [tag, setTag] = useState(null);
-    const [place, setPlace] = useState(null);
-    const [title, setTitle] = useState(null);
-    const [postSlug, setPostSlug] = useState(null);
-    const [status, setStatus] = useState(null);
-    const [date, setDate] = useState(null);
+    const [productTags, setProductTags] = useState(null);
+    const [productDescription, setProductDescription] = useState(null);
+    const [productsPlace, setProductsPlace] = useState(null);
+    const [productTitle, setProductTitle] = useState(null);
+    const [productsSlug, setProductsSlug] = useState(null);
+    const [productStatus, setProductStatus] = useState(null);
+    const [productDate, setProductDate] = useState(null);
+    const [productsLongDescription, setProductsLongDescription] = useState(null);
+
     const navigate = useNavigate();
     const [openAiImage, setOpenAiImage] = useState(false);
 
@@ -43,11 +44,8 @@ const AddProduct = () => {
         setOpenAiImage(false);
     }
     
-
-    
-
-    const editor = useRef(null)
-    const [content, setContent] = useState(null);
+    const editor = useRef(null); //warning maybe and error!
+    const [content, setContent] = useState(null); //warning maybe an error!
 
     const handleChange = (event) => {
         setStatus(event.target.value);
@@ -56,8 +54,6 @@ const AddProduct = () => {
     const handleChangeplace = (event) => {
         setPlace(event.target.value);
       };
-      
-
 
     const handleImageChange = (event) => {
         const selectedImage = event.target.files[0];
@@ -68,7 +64,15 @@ const AddProduct = () => {
         event.preventDefault(); // Prevent the default form submission behavior
       
         try {
-          const success = await SaveItemsAdmin.addProductAdmin(place, postShortDescription, tag, title, postSlug, content, status, date, image);
+          const success = await SaveItemsAdmin.addProductAdmin(productTitle,
+            productsSlug,
+            productDate,
+            productStatus,
+            productsPlace,
+            productTags,
+            productDescription,
+            productImage,
+            productsLongDescription);
           
           if (success) {
             navigate("/services");
@@ -105,23 +109,23 @@ const AddProduct = () => {
             
         <Box sx={{ display: 'flex', flexWrap: 'wrap' }} component="form" noValidate >{/*onSubmit={handleAddBlog}*/}
                 <TextField
-                onChange={(e) => setTitle(e.target.value)}
+                onChange={(e) => setProductTitle(e.target.value)}
                 label="Enter Product Title"
-                id="title"
+                id="productTitle"
                 sx={{ m: 1, width: '30.5%' }}
                 variant="filled"
                 />
                 <TextField
-                onChange={(e) => setPostSlug(e.target.value)}
+                onChange={(e) => setProductsSlug(e.target.value)}
                 label="Enter Product Slug"
-                id="Slug"
+                id="productsSlug"
                 sx={{ m: 1, width: '30.5%' }}
                 variant="filled"
                 />
                 <FormControl sx={{ m: 1, width: '30.5%' }} variant="filled">
                     <FilledInput
-                    onChange={(e) => setDate(e.target.value)}
-                        id='date'
+                    onChange={(e) => setProductDate(e.target.value)}
+                        id='productDate'
                         type='date'
                                             
                     >
@@ -130,12 +134,12 @@ const AddProduct = () => {
                 <FormHelperText id="filled-dob-helper-text">publish Date</FormHelperText>
                 </FormControl>
                 <FormControl sx={{ m: 1, width: '15.5%' }} variant="filled">
-                    <InputLabel id="status">Status</InputLabel>
+                    <InputLabel id="productStatus">Status</InputLabel>
                     <Select
-                        labelId="status"
-                        id="status"
-                        value={status}
-                        label="status"
+                        labelId="productStatus"
+                        id="productStatus"
+                        value={productStatus}
+                        label="Status"
                         onChange={handleChange}
                     >
                         <MenuItem value={0}>Draft</MenuItem>
@@ -143,12 +147,12 @@ const AddProduct = () => {
                     </Select>
                 </FormControl>
                 <FormControl sx={{ m: 1, width: '15.5%' }} variant="filled">
-                    <InputLabel id="place">Product Place</InputLabel>
+                    <InputLabel id="productsPlace">Product Place</InputLabel>
                     <Select
-                        labelId="place"
-                        id="place"
-                        value={place}
-                        label="place"
+                        labelId="productsPlace"
+                        id="productsPlace"
+                        value={productsPlace}
+                        label="Place"
                         onChange={handleChangeplace}
                     >
                         <MenuItem value={1}>1</MenuItem>
@@ -170,8 +174,8 @@ const AddProduct = () => {
                 <FormControl sx={{ m: 1, width: '60%' }} variant="filled">
                 <InputLabel htmlFor="filled-adornment-address">Tags</InputLabel>
                 <FilledInput
-                   onChange={(e) => setTag(e.target.value)}
-                    id='tag'
+                   onChange={(e) => setProductTags(e.target.value)}
+                    id='productTags'
                     type='text'
                     endAdornment = {
                         <InputAdornment position='end'>
@@ -191,8 +195,8 @@ const AddProduct = () => {
                 <FormControl sx={{ m: 1, width: '93%' }} variant="filled">
                 <InputLabel htmlFor="filled-adornment-short-description">Blog Short Description</InputLabel>
                 <FilledInput
-                   onChange={(e) => setPostShortDescription(e.target.value)}
-                    id='short-description'
+                   onChange={(e) => setProductDescription(e.target.value)}
+                    id='productDescription'
                     type='text'
                     multiline
                     rows={3}
@@ -216,7 +220,7 @@ const AddProduct = () => {
                 <FormControl sx={{ m: 1, width: '45%' }} variant="filled">
                     <Input
                         accept="image/*"
-                        id="image-upload"
+                        id="productImage"
                         type="file"
                         htmlFor="image-upload"
                         onChange={handleImageChange}
