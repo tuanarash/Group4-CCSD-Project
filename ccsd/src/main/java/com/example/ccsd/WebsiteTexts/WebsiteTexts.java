@@ -6,25 +6,28 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 public class WebsiteTexts {
 
-
-class Text {
-
     @Id
-    //private String id;
+    private String id;
     private String titleText;
     private String headerText;
     private String footerText;
     private String bodyText;
     private long contactNum;
 
+    public WebsiteTexts(){
+    }
+
     //Constructor
-    public Text(String titleText, String headerText, String footerText, String bodyText, long contactNum){
+    public WebsiteTexts(String titleText, String headerText, String footerText, String bodyText, long contactNum){
         this.titleText = titleText;
         this.headerText = headerText;
         this.footerText = footerText;
         this.bodyText = bodyText;
         this.contactNum =contactNum;
     }
+
+    public String getId() {return id;}
+    public void setId(String id) {this.id = id;}
 
     public String getTitleText() { return titleText; }
     public void setTitleText(String titleText) { this.titleText = titleText; }
@@ -40,7 +43,6 @@ class Text {
 
     public long getContactNum() { return contactNum; }
     public void setContactNum(long contactNum) { this.contactNum = contactNum; }
-}
 }
 
 // Driver Class
