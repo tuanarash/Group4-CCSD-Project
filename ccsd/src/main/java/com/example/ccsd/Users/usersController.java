@@ -17,32 +17,32 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/api/Users")
-public class UsersController {
+public class usersController {
     
 
     @Autowired
-    private UsersService UsersService;
+    private usersService usersService;
 
     @GetMapping
-    public List<Users> getAlluser() {
-        return UsersService.getAlluser();
+    public List<users> getAlluser() {
+        return usersService.getAlluser();
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Users> getusersById(@PathVariable String id) {
-        return UsersService.getusersById(id)
+    public ResponseEntity<users> getusersById(@PathVariable String id) {
+        return usersService.getusersById(id)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
 
     @PostMapping
-    public Users addusers(@RequestBody Users Users) {
-        return UsersService.addusers(Users);
+    public users addusers(@RequestBody users Users) {
+        return usersService.addusers(Users);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Users> updateusers(@PathVariable String id, @RequestBody Users UsersDetails) {
-        Users updatedusers = UsersService.updateusers(id, UsersDetails);
+    public ResponseEntity<users> updateusers(@PathVariable String id, @RequestBody users UsersDetails) {
+        users updatedusers = usersService.updateusers(id, UsersDetails);
         if (updatedusers != null) {
             return ResponseEntity.ok(updatedusers);
         }
@@ -51,7 +51,7 @@ public class UsersController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteusers(@PathVariable String id) {
-        UsersService.deleteusers(id);
+        usersService.deleteusers(id);
         return ResponseEntity.noContent().build();
     }
 }
