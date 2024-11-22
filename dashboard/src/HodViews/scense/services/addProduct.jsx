@@ -48,16 +48,16 @@ const AddProduct = () => {
     const [content, setContent] = useState(null); //warning maybe an error!
 
     const handleChange = (event) => {
-        setStatus(event.target.value);
+        setProductStatus(event.target.value);
       };
       
-    const handleChangeplace = (event) => {
+    /* const handleChangeplace = (event) => {
         setPlace(event.target.value);
-      };
+      }; */
 
     const handleImageChange = (event) => {
         const selectedImage = event.target.files[0];
-        setImage(selectedImage);
+        setProductImage(selectedImage);
     };
 
     const handleAddBlog = async (event) => {

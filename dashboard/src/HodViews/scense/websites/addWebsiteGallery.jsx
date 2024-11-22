@@ -24,9 +24,9 @@ const AddWebsiteGallery = () => {
     const colors = tokens(theme.palette.mode);
     const [galleryImageTitle, setgalleryImageTitle] = useState(null);
     const [gallerySlug, setGallerySlug] = useState(null);
-    const [galleryDate, setGalleryDate] = useState(null);
+    const [galleryDate, setgalleryDate] = useState(null);
     const [galleryStatus, setGalleryStatus] = useState(null);
-    const [galleryTags, setGalleryTags] = useState(null);
+    const [galleryTags, setgalleryTags] = useState(null);
     const [galleryTextPlace, setgalleryTextPlace] = useState(null);
     const [galleryImageLocation, setgalleryImageLocation] = useState(null);
 
@@ -48,7 +48,7 @@ const AddWebsiteGallery = () => {
     const [content, setContent] = useState(null);
 
     const handleChange = (event) => {
-        setStatus(event.target.value);
+        setGalleryStatus(event.target.value);
       };
       
 
@@ -59,7 +59,7 @@ const AddWebsiteGallery = () => {
 
     const handleImageChange = (event) => {
         const selectedImage = event.target.files[0];
-        setImage(selectedImage);
+        setImage(selectedsetgalleryImageLocation);
     };
 
     const handleAddBlog = async (event) => {
@@ -109,7 +109,7 @@ const AddWebsiteGallery = () => {
             
         <Box sx={{ display: 'flex', flexWrap: 'wrap' }} component="form" noValidate >{/*onSubmit={handleAddBlog}*/}
                 <TextField
-                onChange={(e) => setTitle(e.target.value)}
+                onChange={(e) => setgalleryImageTitle(e.target.value)}
                 label="Enter Image Title"
                 id="galleryImageTitle"
                 sx={{ m: 1, width: '30.5%' }}
