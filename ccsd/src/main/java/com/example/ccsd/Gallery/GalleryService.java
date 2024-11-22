@@ -40,13 +40,13 @@ public class GalleryService {
             // Get from database
 
             Gallery gallery = galleryOpt.get();
-            gallery.setgalleryTitle(galleryDetails.getgalleryTitle());
+            gallery.setgalleryImageTitle(galleryDetails.getgalleryImageTitle());
             gallery.setgallerySlug(galleryDetails.getgallerySlug());
             gallery.setgalleryDate(galleryDetails.getgalleryDate());
             gallery.setgalleryStatus(galleryDetails.getgalleryStatus());
             gallery.setgalleryTags(galleryDetails.getgalleryTags());
-            gallery.setgalleryDescription(galleryDetails.getgalleryDescription());
-            gallery.setgalleryImage(galleryDetails.getgalleryImage());
+            gallery.setgalleryTextPlace(galleryDetails.getgalleryTextPlace());
+            gallery.setgalleryImageLocation(galleryDetails.getgalleryImageLocation());
             return galleryRepository.save(gallery);
         }
         return null;
