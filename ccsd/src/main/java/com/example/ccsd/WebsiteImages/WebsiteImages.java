@@ -25,6 +25,10 @@ public class WebsiteImages {
     }
 
     // Getter methods (to access private fields)
+    public String getId() {
+        return id;
+    } 
+
     public String getImageUrl() {
         return imageUrl;
     }
@@ -42,6 +46,11 @@ public class WebsiteImages {
     }
 
     // Setter methods (to modify private fields)
+
+    public void setId(String id) {
+        this.id = id;
+    } 
+
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
     }
