@@ -1,4 +1,6 @@
 package com.example.ccsd.WebsiteImages;
+
+import java.time.LocalDateTime;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -9,19 +11,29 @@ public class WebsiteImages {
     // Define the variables
     @Id
     private String id;
-    private String imageUrl;
-    private int width;
-    private int height;
-    private String imageType;
+    private String image;
+    private String place;
+    private String postShortDescription;
+    private String tag;
+    private String title;
+    private String postSlug;
+    private String content;
+    private Boolean status;
+    private LocalDateTime date;
 
     // Constructors
     public WebsiteImages() {}
 
-    public WebsiteImages(String imageUrl, int width, int height, String imageType) {
-        this.imageUrl = imageUrl;
-        this.width = width;
-        this.height = height;
-        this.imageType = imageType;
+    public WebsiteImages(String place, String postShortDescription, String tag, String title, String postSlug, String content, Boolean status, LocalDateTime date, String image) {
+        this.place = place;
+        this.postShortDescription = postShortDescription;
+        this.tag = tag;
+        this.title = title;
+        this.postSlug = postSlug;
+        this.content = content;
+        this.status = status;
+        this.date = date;
+        this.image = image;
     }
 
     // Getter methods (to access private fields)
@@ -29,42 +41,83 @@ public class WebsiteImages {
         return id;
     } 
 
-    public String getImageUrl() {
-        return imageUrl;
+    public String getPlace() {
+        return place;
     }
 
-    public int getWidth() {
-        return width;
+    public String getPostShortDescription() {
+        return postShortDescription;
     }
 
-    public int getHeight() {
-        return height;
+    public String getTag() {
+        return tag;
     }
 
-    public String getImageType() {
-        return imageType;
+    public String getTitle() {
+        return title;
+    }
+
+    public String getPostSlug() {
+        return postSlug;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public Boolean getStatus() {
+        return status;
+    }
+
+    public LocalDateTime getDate() {  // Return LocalDateTime
+        return date;
+    }
+
+    public String getImage() {
+        return image;
     }
 
     // Setter methods (to modify private fields)
 
+    // Setter methods (to modify private fields)
     public void setId(String id) {
         this.id = id;
     } 
 
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
+    public void setImage(String image) {  // Set image field
+        this.image = image;
     }
 
-    public void setWidth(int width) {
-        this.width = width;
+    public void setPlace(String place) {
+        this.place = place;
     }
 
-    public void setHeight(int height) {
-        this.height = height;
+    public void setPostShortDescription(String postShortDescription) {
+        this.postShortDescription = postShortDescription;
     }
 
-    public void setImageType(String imageType) {
-        this.imageType = imageType;
+    public void setTag(String tag) {
+        this.tag = tag;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setPostSlug(String postSlug) {
+        this.postSlug = postSlug;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public void setStatus(Boolean status) {
+        this.status = status;
+    }
+
+    public void setDate(LocalDateTime date) {  // Set date as LocalDateTime
+        this.date = date;
     }
 
 }

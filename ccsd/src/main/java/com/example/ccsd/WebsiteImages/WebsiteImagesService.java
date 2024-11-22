@@ -36,10 +36,15 @@ public class WebsiteImagesService {
             // Get from database
 
             WebsiteImages image = imageOpt.get();
-            image.setImageUrl(imageDetails.getImageUrl());
-            image.setImageType(imageDetails.getImageType());
-            image.setWidth(imageDetails.getWidth());
-            image.setHeight(imageDetails.getHeight());
+            image.setPlace(imageDetails.getPlace());
+            image.setPostShortDescription(imageDetails.getPostShortDescription());
+            image.setTag(imageDetails.getTag());
+            image.setTitle(imageDetails.getTitle());
+            image.setPostSlug(imageDetails.getPostSlug());
+            image.setContent(imageDetails.getContent());
+            image.setStatus(imageDetails.getStatus());
+            image.setDate(imageDetails.getDate());
+            image.setImage(imageDetails.getImage());
             return websiteImagesRepository.save(image);
         }
         return null;
