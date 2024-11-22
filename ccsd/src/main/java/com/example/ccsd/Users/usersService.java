@@ -7,36 +7,36 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class usersService {
+public class UsersService {
 
     @Autowired
-    private usersRepository UsersRepository;
+    private UsersRepository UsersRepository;
 
     // Getting all users
-    public List<users> getAlluser() {
+    public List<Users> getAlluser() {
         return UsersRepository.findAll();
     }
 
     // Getting single users
-    public Optional<users> getusersById(String id) {
+    public Optional<Users> getusersById(String id) {
         return UsersRepository.findById(id);
     }
 
     // Creating new data in repository
 
-    public users addusers(users Users) {
+    public Users addusers(Users Users) {
         return UsersRepository.save(Users);
     }
 
     // Updating the users
 
-    public users updateusers(String id, users UsersDetails) {
-        Optional<users> UsersOpt = UsersRepository.findById(id);
+    public Users updateusers(String id, Users UsersDetails) {
+        Optional<Users> UsersOpt = UsersRepository.findById(id);
         if (UsersOpt.isPresent()) {
 
             // Get from database
 
-            users Users = UsersOpt.get();
+            Users Users = UsersOpt.get();
             Users.setFirstName(UsersDetails.getFirstName());
             Users.setLastName(UsersDetails.getLastName());
             Users.setPhoneNumber(UsersDetails.getPhoneNumber());
@@ -55,3 +55,5 @@ public class usersService {
         UsersRepository.deleteById(id);
     } 
 }
+
+// changes here
