@@ -1,4 +1,6 @@
 package com.example.ccsd.Users;
+import java.util.Date;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -9,23 +11,33 @@ public class users {
     @Id
     private String id;
     private String FirstName;
-    private String LastName;
-    private String PhoneNumber;
-    private String EmailAddress;
-    private String HomeAddress;
+    private String Lastname;
+    private String Phone;
+    private String Email;
+    private String Address;
     private String Password;
-    private String ProfilePicture;
+    private String ShowPassword;
+    private String Image;
+    private String userName;
+    private Date Dob;
+    private String Role;
 
     public users() {}
 
-    public users(String FirstName, String LastName, String PhoneNumber, String EmailAddress, String HomeAddress, String Password, String ProfilePicture) {
+    public users(String FirstName, String Lastname, String Phone, String Email, String Address, String Password, String ShowPassword, String Image, String userName, Date Dob,
+    String Role) {
         this.FirstName = FirstName;
-        this.LastName = LastName;
-        this.PhoneNumber = PhoneNumber;
-        this.EmailAddress = EmailAddress;
-        this.HomeAddress = HomeAddress;
+        this.Lastname = Lastname;
+        this.Phone = Phone;
+        this.Email = Email;
+        this.Address = Address;
         this.Password = Password;
-        this.ProfilePicture =ProfilePicture;
+        this.ShowPassword = ShowPassword;
+        this.Image = Image;
+        this.userName = userName;
+        this.Dob = Dob;
+        this.Role = Role;
+
 
     }
         
@@ -45,36 +57,36 @@ public class users {
         this.FirstName = FirstName;
     }
 
-    public String getLastName() {
-        return LastName;
+    public String getLastname() {
+        return Lastname;
     }
 
-    public void setLastName(String LastName) {
-        this.LastName = LastName;
+    public void setLastname(String Lastname) {
+        this.Lastname = Lastname;
     }
 
-    public String getPhoneNumber() {
-        return PhoneNumber;
+    public String getPhone() {
+        return Phone;
     }
 
-    public void setPhoneNumber(String PhoneNumber) {
-        this.PhoneNumber = PhoneNumber;
+    public void setPhone(String Phone) {
+        this.Phone = Phone;
     }
 
-    public String getEmailAddress() {
-        return EmailAddress;
+    public String getEmail() {
+        return Email;
     }
 
-    public void setEmailAddress(String EmailAddress) {
-        this.EmailAddress = EmailAddress;
+    public void setEmail(String Email) {
+        this.Email = Email;
     }
 
-    public String getHomeAddress() {
-        return HomeAddress;
+    public String getAddress() {
+        return Address;
     }
 
-    public void setHomeAddress(String HomeAddress) {
-        this.HomeAddress = HomeAddress;
+    public void setAddress(String Address) {
+        this.Address = Address;
     }
 
     public String getPassword() {
@@ -85,12 +97,42 @@ public class users {
         this.Password = Password;
     }
 
-    public String getProfilePicture() {
-        return ProfilePicture;
+    public String getShowPassword() {
+        return ShowPassword;
     }
 
-    public void setProfilePicture(String ProfilePicture) {
-        this.ProfilePicture =ProfilePicture;
+    public void setShowPassword(String ShowPassword) {
+        this.ShowPassword = ShowPassword;
+    }
+
+    public String getImage() {
+        return Image;
+    }
+
+    public void setImage(String Image) {
+        this.Image = Image;
+    }
+
+    public String getuserName() {
+        return userName;
+    }
+    public void setuserName(String userName) {
+        this.userName = userName;
+    }
+
+    public Date getDob() {
+        return Dob;
+    }
+    public void setDob(Date Dob) {
+        this.Dob = Dob;
+    }
+
+    public String getRole() {
+        return Role;
+    }
+
+    public void setRole(String Role) {
+        this.Role = Role;
     }
 
 }

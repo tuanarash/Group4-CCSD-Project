@@ -38,12 +38,16 @@ public class usersService {
 
             users Users = UsersOpt.get();
             Users.setFirstName(UsersDetails.getFirstName());
-            Users.setLastName(UsersDetails.getLastName());
-            Users.setPhoneNumber(UsersDetails.getPhoneNumber());
-            Users.setEmailAddress(UsersDetails.getEmailAddress());
-            Users.setHomeAddress(UsersDetails.getHomeAddress());
+            Users.setLastname(UsersDetails.getLastname());
+            Users.setPhone(UsersDetails.getPhone());
+            Users.setEmail(UsersDetails.getEmail());
+            Users.setAddress(UsersDetails.getAddress());
             Users.setPassword(UsersDetails.getPassword());
-            Users.setProfilePicture(UsersDetails.getProfilePicture());
+            Users.setShowPassword(UsersDetails.getShowPassword());
+            Users.setImage(UsersDetails.getImage());
+            Users.setuserName(UsersDetails.getuserName());
+            Users.setDob(UsersDetails.getDob());
+            Users.setRole(UsersDetails.getRole());
             return usersRepository.save(Users);
         }
         return null;
