@@ -7,36 +7,36 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class UsersService {
+public class usersService {
 
     @Autowired
-    private UsersRepository UsersRepository;
+    private usersRepository usersRepository;
 
     // Getting all users
-    public List<Users> getAlluser() {
-        return UsersRepository.findAll();
+    public List<users> getAlluser() {
+        return usersRepository.findAll();
     }
 
     // Getting single users
-    public Optional<Users> getusersById(String id) {
-        return UsersRepository.findById(id);
+    public Optional<users> getusersById(String id) {
+        return usersRepository.findById(id);
     }
 
     // Creating new data in repository
 
-    public Users addusers(Users Users) {
-        return UsersRepository.save(Users);
+    public users addusers(users Users) {
+        return usersRepository.save(Users);
     }
 
     // Updating the users
 
-    public Users updateusers(String id, Users UsersDetails) {
-        Optional<Users> UsersOpt = UsersRepository.findById(id);
+    public users updateusers(String id, users UsersDetails) {
+        Optional<users> UsersOpt = usersRepository.findById(id);
         if (UsersOpt.isPresent()) {
 
             // Get from database
 
-            Users Users = UsersOpt.get();
+            users Users = UsersOpt.get();
             Users.setFirstName(UsersDetails.getFirstName());
             Users.setLastName(UsersDetails.getLastName());
             Users.setPhoneNumber(UsersDetails.getPhoneNumber());
@@ -44,7 +44,7 @@ public class UsersService {
             Users.setHomeAddress(UsersDetails.getHomeAddress());
             Users.setPassword(UsersDetails.getPassword());
             Users.setProfilePicture(UsersDetails.getProfilePicture());
-            return UsersRepository.save(Users);
+            return usersRepository.save(Users);
         }
         return null;
     }
@@ -52,7 +52,7 @@ public class UsersService {
     // Deleting
     
     public void deleteusers(String id) {
-        UsersRepository.deleteById(id);
+        usersRepository.deleteById(id);
     } 
 }
 
