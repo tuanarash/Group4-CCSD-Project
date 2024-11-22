@@ -58,7 +58,7 @@ const AddWebsiteGallery = () => {
     
 
     const handleImageChange = (event) => {
-        const selectedImage = event.target.files[0];
+        const selectedsetgalleryImageLocation = event.target.files[0];
         setImage(selectedsetgalleryImageLocation);
     };
 

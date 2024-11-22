@@ -153,7 +153,7 @@ const AddProduct = () => {
                         id="productsPlace"
                         value={productsPlace}
                         label="Place"
-                        onChange={handleChangeplace}
+                        onChange={productsPlace}
                     >
                         <MenuItem value={1}>1</MenuItem>
                         <MenuItem value={2}>2</MenuItem>
