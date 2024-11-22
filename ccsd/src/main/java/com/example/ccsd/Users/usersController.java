@@ -13,36 +13,36 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
+// changes here
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/api/Users")
-public class usersController {
+public class UsersController {
     
 
     @Autowired
-    private usersService UsersService;
+    private UsersService UsersService;
 
     @GetMapping
-    public List<users> getAlluser() {
+    public List<Users> getAlluser() {
         return UsersService.getAlluser();
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<users> getusersById(@PathVariable String id) {
+    public ResponseEntity<Users> getusersById(@PathVariable String id) {
         return UsersService.getusersById(id)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
 
     @PostMapping
-    public users addusers(@RequestBody users Users) {
+    public Users addusers(@RequestBody Users Users) {
         return UsersService.addusers(Users);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<users> updateusers(@PathVariable String id, @RequestBody users UsersDetails) {
-        users updatedusers = UsersService.updateusers(id, UsersDetails);
+    public ResponseEntity<Users> updateusers(@PathVariable String id, @RequestBody Users UsersDetails) {
+        Users updatedusers = UsersService.updateusers(id, UsersDetails);
         if (updatedusers != null) {
             return ResponseEntity.ok(updatedusers);
         }

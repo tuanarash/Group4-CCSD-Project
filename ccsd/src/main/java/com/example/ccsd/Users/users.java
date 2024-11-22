@@ -2,9 +2,9 @@ package com.example.ccsd.Users;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-
+// changes here
 @Document(collection = "Users")
-public class users {
+public class Users {
     
     @Id
     private String id;
@@ -16,9 +16,9 @@ public class users {
     private String Password;
     private String ProfilePicture;
 
-    public users() {}
+    public Users() {}
 
-    public users(String FirstName, String LastName, String PhoneNumber, String EmailAddress, String HomeAddress, String Password, String ProfilePicture) {
+    public Users(String FirstName, String LastName, String PhoneNumber, String EmailAddress, String HomeAddress, String Password, String ProfilePicture) {
         this.FirstName = FirstName;
         this.LastName = LastName;
         this.PhoneNumber = PhoneNumber;
