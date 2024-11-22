@@ -30,23 +30,27 @@ public class WebsiteTextsService {
 
     // Updating the book
 
-    /*public WebsiteTexts updateWebsiteTexts(String id, WebsiteTexts websiteTextsDetails) {
+    public WebsiteTexts updateWebsiteTexts(String id, WebsiteTexts websiteTextsDetails) {
         Optional<WebsiteTexts> WebsiteTextsOpt = websiteTextsRepository.findById(id);
         if (WebsiteTextsOpt.isPresent()) {
 
             // Get from database
 
             WebsiteTexts websiteTexts = WebsiteTextsOpt.get();
-            websiteTexts.setTitleText(websiteTextsDetails.getTitleText());
-            websiteTexts.setHeaderText(websiteTextsDetails.getHeaderText());
-            websiteTexts.setFooterText(websiteTextsDetails.getFooterText());
-            websiteTexts.setBodyText(websiteTextsDetails.getBodyText());
-            websiteTexts.setContactNum(websiteTextsDetails.getContactNum());
+            websiteTexts.setTitle(websiteTextsDetails.getTitle());
+            websiteTexts.setContent(websiteTextsDetails.getContent());
+            websiteTexts.setShortDescription(websiteTextsDetails.getShortDescription());
+            websiteTexts.setTag(websiteTextsDetails.getTag());
+            websiteTexts.setStatus(websiteTextsDetails.getStatus());
+            websiteTexts.setPlace(websiteTextsDetails.getPlace());
+            websiteTexts.setDate(websiteTextsDetails.getDate());
+            websiteTexts.setPostSlug(websiteTextsDetails.getPostSlug());
+            websiteTexts.setImage(websiteTextsDetails.getImage());
 
             return websiteTextsRepository.save(websiteTexts);
         }
         return null;
-    }*/
+    }
 
     // Deleting
     
