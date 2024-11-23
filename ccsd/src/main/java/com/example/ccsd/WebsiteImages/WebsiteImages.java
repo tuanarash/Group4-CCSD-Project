@@ -20,7 +20,8 @@ public class WebsiteImages {
     private String content;
     private String status;
     private LocalDateTime date;
-
+    
+    // Test
     // Constructors
     public WebsiteImages() {}
 

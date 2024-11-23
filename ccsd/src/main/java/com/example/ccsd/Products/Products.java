@@ -1,46 +1,43 @@
 package com.example.ccsd.Products;
+
 import java.util.Date;
-import java.util.List;
 
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "Products")
-// ERROR HERE PLS CHECK!!!
-//problem solved
-
+// ERROR HERE CHECK!
 
 //new change
-public class Products {
+
+public class Products{
     @Id
     private String id;
-    private String productTitle;
-    private String productsSlug;
-    private Date productDate;
-    private String productStatus;
-    private String productsPlace;
-    private List<String> productTags;
-    private String productDescription;
-    private String productImage;
-    private String productsLongDescription;
+    private String title;
+    private String PostSlug;
+    private Date date;
+    private String status;
+    private String tag;
+    private String place;
+    private String content;
+    private String image;
+    private String postShortDescription;
 
-    // Constructor
+    //Constructors
     public Products() {}
 
-    public Products(String productTitle, String productSlug, Date productDate, String productStatus, String productPlace, 
-    List<String> productTags, String productDescription, String productImage, String productsLongDescription) {
-        this.productTitle = productTitle;
-        this.productsSlug = productSlug;
-        this.productDate = productDate;
-        this.productStatus = productStatus;
-        this.productsPlace = productPlace;
-        this.productTags = productTags;
-        this.productDescription = productDescription;
-        this.productImage = productImage;
-        this.productsLongDescription = productsLongDescription;
+    public Products(String title, String PostSlug, Date date, String status, 
+    String tag, String place, String content, String image, String postShortDescription) {
+        this.title = title;
+        this.PostSlug = PostSlug;
+        this.date = date;
+        this.status = status;
+        this.tag = tag;
+        this.place = place;
+        this.content = content;
+        this.image = image;
+        this.postShortDescription = postShortDescription;
     }
 
-    //Getters and Setters
+    // Getters and Setters
     public String getId() {
         return id;
     }
@@ -48,83 +45,77 @@ public class Products {
     public void setId(String id) {
         this.id = id;
     }
-    
-    public String getproductTitle() {
-        return productTitle;
+
+    public String getTitle() {
+        return title;
     }
 
-    public void setproductTitle(String productTitle) {
-        this.productTitle = productTitle;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public String getproductsSlug() {
-        return productsSlug;
+    public String getPostSlug() {
+        return PostSlug;
     }
 
-    public void setproductsSlug(String productsSlug) {
-        this.productsSlug = productsSlug;
+    public void setPostSlug(String PostSlug) {
+        this.PostSlug = PostSlug;
     }
 
-    public Date getproductDate() {
-        return productDate;
+    public Date getDate() {
+        return date;
     }
 
-    public void setproductDate(Date productDate) {
-        this.productDate = productDate;
+    public void setDate(Date date) {
+        this.date = date;
     }
 
-    public String getproductStatus() {
-        return productStatus;
+    public String getStatus() {
+        return status;
     }
 
-    public void setproductStatus(String productStatus) {
-        this.productStatus = productStatus;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
-    public String getproductsPlace() {
-        return productsPlace;
+    public String getTag() {
+        return tag;
     }
 
-    public void setproductsPlace(String productsPlace) {
-        this.productsPlace = productsPlace;
+    public void setTag(String tag) {
+        this.tag = tag;
     }
 
-    public List<String> getproductTags() {
-        return productTags;
+    public String getPlace() {
+        return place;
     }
 
-    public void setproductTags(List<String> productTags) {
-        this.productTags = productTags;
+    public void setPlace(String place) {
+        this.place = place;
     }
 
-    public String getproductDescription() {
-        return productDescription;
+    public String getContent() {
+        return content;
     }
 
-    public void setproductDescription(String productDescription) {
-        this.productDescription = productDescription;
+    public void setContent(String content) {
+        this.content = content;
     }
 
-    public String getproductImage() {
-        return productImage;
+    public String getimage() {
+        return image;
     }
 
-    public void setproductImage(String productImage) {
-        this.productImage = productImage;
+    public void setImage(String image) {
+        this.image = image;
     }
 
-    public String getproductsLongDescription() {
-        return productsLongDescription;
+    public String getPostShortDescription() {
+        return postShortDescription;
     }
 
-    public void setproductsLongDescription(String productsLongDescription) {
-        this.productsLongDescription = productsLongDescription;
+    public void setPostShortDescription(String postShortDescription) {
+        this.postShortDescription = postShortDescription;
     }
-
-    public static void main(String[] args) { 
-
-    }
-
 
 }
-

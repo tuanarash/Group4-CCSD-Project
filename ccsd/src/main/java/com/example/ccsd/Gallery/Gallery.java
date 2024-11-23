@@ -1,7 +1,6 @@
 package com.example.ccsd.Gallery;
 
 import java.util.Date;
-import java.util.List;
 
 import org.springframework.data.annotation.Id;
 
@@ -12,26 +11,30 @@ import org.springframework.data.annotation.Id;
 public class Gallery{
     @Id
     private String id;
-    private String galleryImageTitle;
-    private String gallerySlug;
-    private Date galleryDate;
-    private String galleryStatus;
-    private List<String> galleryTags;
-    private String galleryTextPlace;
-    private String galleryImageLocation;
+    private String title;
+    private String PostSlug;
+    private Date date;
+    private String status;
+    private String tag;
+    private String place;
+    private String content;
+    private String image;
+    private String postShortDescription;
 
     //Constructors
     public Gallery() {}
 
-    public Gallery(String galleryImageTitle, String gallerySlug, Date galleryDate, String galleryStatus, 
-    List<String> galleryTags, String galleryTextPlace, String galleryImageLocation) {
-        this.galleryImageTitle = galleryImageTitle;
-        this.gallerySlug = gallerySlug;
-        this.galleryDate = galleryDate;
-        this.galleryStatus = galleryStatus;
-        this.galleryTags = galleryTags;
-        this.galleryTextPlace = galleryTextPlace;
-        this.galleryImageLocation = galleryImageLocation;
+    public Gallery(String title, String PostSlug, Date date, String status, 
+    String tag, String place, String content, String image, String postShortDescription) {
+        this.title = title;
+        this.PostSlug = PostSlug;
+        this.date = date;
+        this.status = status;
+        this.tag = tag;
+        this.place = place;
+        this.content = content;
+        this.image = image;
+        this.postShortDescription = postShortDescription;
     }
 
     // Getters and Setters
@@ -43,60 +46,76 @@ public class Gallery{
         this.id = id;
     }
 
-    public String getgalleryImageTitle() {
-        return galleryImageTitle;
+    public String getTitle() {
+        return title;
     }
 
-    public void setgalleryImageTitle(String galleryImageTitle) {
-        this.galleryImageTitle = galleryImageTitle;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public String getgallerySlug() {
-        return gallerySlug;
+    public String getPostSlug() {
+        return PostSlug;
     }
 
-    public void setgallerySlug(String gallerySlug) {
-        this.gallerySlug = gallerySlug;
+    public void setPostSlug(String PostSlug) {
+        this.PostSlug = PostSlug;
     }
 
-    public Date getgalleryDate() {
-        return galleryDate;
+    public Date getDate() {
+        return date;
     }
 
-    public void setgalleryDate(Date galleryDate) {
-        this.galleryDate = galleryDate;
+    public void setDate(Date date) {
+        this.date = date;
     }
 
-    public String getgalleryStatus() {
-        return galleryStatus;
+    public String getStatus() {
+        return status;
     }
 
-    public void setgalleryStatus(String galleryStatus) {
-        this.galleryStatus = galleryStatus;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
-    public List<String> getgalleryTags() {
-        return galleryTags;
+    public String getTag() {
+        return tag;
     }
 
-    public void setgalleryTags(List<String> galleryTags) {
-        this.galleryTags = galleryTags;
+    public void setTag(String tag) {
+        this.tag = tag;
     }
 
-    public String getgalleryTextPlace() {
-        return galleryTextPlace;
+    public String getPlace() {
+        return place;
     }
 
-    public void setgalleryTextPlace(String galleryTextPlace) {
-        this.galleryTextPlace = galleryTextPlace;
+    public void setPlace(String place) {
+        this.place = place;
     }
 
-    public String getgalleryImageLocation() {
-        return galleryImageLocation;
+    public String getContent() {
+        return content;
     }
 
-    public void setgalleryImageLocation(String galleryImageLocation) {
-        this.galleryImageLocation = galleryImageLocation;
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public String getimage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public String getPostShortDescription() {
+        return postShortDescription;
+    }
+
+    public void setPostShortDescription(String postShortDescription) {
+        this.postShortDescription = postShortDescription;
     }
 
 }
