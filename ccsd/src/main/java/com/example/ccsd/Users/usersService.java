@@ -42,6 +42,7 @@ public class usersService {
             Users.setemail(UsersDetails.getemail());
             Users.setaddress(UsersDetails.getaddress());
             Users.setpassword(UsersDetails.getpassword());
+            Users.setShowPassword(UsersDetails.getShowPassword());
             Users.setimage(UsersDetails.getimage());
             Users.setuserName(UsersDetails.getuserName());
             Users.setdob(UsersDetails.getdob());
