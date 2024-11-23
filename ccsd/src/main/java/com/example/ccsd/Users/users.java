@@ -16,7 +16,7 @@ public class users {
     private String email;
     private String address;
     private String password;
-    private String ShowPassword;
+    private String showPassword;
     private String image;
     private String userName;
     private Date dob;
@@ -28,7 +28,7 @@ public class users {
 
     public users() {}
 
-    public users(String firstName, String lastName, String phone, String email, String address, String password, String ShowPassword, String image, String userName, Date dob,
+    public users(String firstName, String lastName, String phone, String email, String address, String password, String showPassword, String image, String userName, Date dob,
     String role) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -36,7 +36,7 @@ public class users {
         this.email = email;
         this.address = address;
         this.password = password;
-        this.ShowPassword = ShowPassword;
+        this.showPassword = showPassword;
         this.image = image;
         this.userName = userName;
         this.dob = dob;
@@ -99,12 +99,12 @@ public class users {
         this.password = password;
     }
 
-    public String getShowPassword() {
-        return ShowPassword;
+    public String getshowPassword() {
+        return showPassword;
     }
 
-    public void setShowPassword(String ShowPassword) {
-        this.ShowPassword = ShowPassword;
+    public void setshowPassword(String showPassword) {
+        this.showPassword = showPassword;
     }
 
 
