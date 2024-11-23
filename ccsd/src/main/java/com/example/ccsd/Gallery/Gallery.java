@@ -1,7 +1,5 @@
 package com.example.ccsd.Gallery;
 
-import java.util.Date;
-
 import org.springframework.data.annotation.Id;
 
 // ERROR HERE CHECK!
@@ -13,19 +11,19 @@ public class Gallery{
     private String id;
     private String title;
     private String postSlug;
-    private Date date;
+    private String date;
     private String status;
     private String tag;
     private String place;
     private String content;
-    private String image;
+    private byte[] image;
     private String postShortDescription;
 
     //Constructors
     public Gallery() {}
 
-    public Gallery(String title, String postSlug, Date date, String status, 
-    String tag, String place, String content, String image, String postShortDescription) {
+    public Gallery(String title, String postSlug, String date, String status, 
+    String tag, String place, String content, byte[] image, String postShortDescription) {
         this.title = title;
         this.postSlug = postSlug;
         this.date = date;
@@ -62,11 +60,11 @@ public class Gallery{
         this.postSlug = postSlug;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
@@ -102,11 +100,11 @@ public class Gallery{
         this.content = content;
     }
 
-    public String getimage() {
+    public byte[] getimage() {
         return image;
     }
 
-    public void setImage(String image) {
+    public void setImage(byte[] image) {
         this.image = image;
     }
 
