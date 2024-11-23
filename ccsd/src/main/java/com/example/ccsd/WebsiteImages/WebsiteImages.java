@@ -1,6 +1,6 @@
 package com.example.ccsd.WebsiteImages;
 
-import java.time.LocalDateTime;
+import java.util.Date;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -19,13 +19,13 @@ public class WebsiteImages {
     private String postSlug;
     private String content;
     private String status;
-    private LocalDateTime date;
+    private Date date;
     
     // Test
     // Constructors
     public WebsiteImages() {}
 
-    public WebsiteImages(String place, String postShortDescription, String tag, String title, String postSlug, String content, String status, LocalDateTime date, String image) {
+    public WebsiteImages(String place, String postShortDescription, String tag, String title, String postSlug, String content, String status, Date date, String image) {
         this.place = place;
         this.postShortDescription = postShortDescription;
         this.tag = tag;
@@ -70,7 +70,7 @@ public class WebsiteImages {
         return status;
     }
 
-    public LocalDateTime getDate() {  // Return LocalDateTime
+    public Date getDate() {  // Return LocalDateTime
         return date;
     }
 
@@ -117,7 +117,7 @@ public class WebsiteImages {
         this.status = status;
     }
 
-    public void setDate(LocalDateTime date) {  // Set date as LocalDateTime
+    public void setDate(Date date) { 
         this.date = date;
     }
 
