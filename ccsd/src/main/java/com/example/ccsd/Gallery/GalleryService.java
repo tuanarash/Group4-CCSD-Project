@@ -1,5 +1,4 @@
 package com.example.ccsd.Gallery;
-
 import java.util.List;
 import java.util.Optional;
 
@@ -40,13 +39,15 @@ public class GalleryService {
             // Get from database
 
             Gallery gallery = galleryOpt.get();
-            gallery.setgalleryImageTitle(galleryDetails.getgalleryImageTitle());
-            gallery.setgallerySlug(galleryDetails.getgallerySlug());
-            gallery.setgalleryDate(galleryDetails.getgalleryDate());
-            gallery.setgalleryStatus(galleryDetails.getgalleryStatus());
-            gallery.setgalleryTags(galleryDetails.getgalleryTags());
-            gallery.setgalleryTextPlace(galleryDetails.getgalleryTextPlace());
-            gallery.setgalleryImageLocation(galleryDetails.getgalleryImageLocation());
+            gallery.setTitle(galleryDetails.getTitle());
+            gallery.setPostSlug(galleryDetails.getPostSlug());
+            gallery.setDate(galleryDetails.getDate());
+            gallery.setStatus(galleryDetails.getStatus());
+            gallery.setTag(galleryDetails.getTag());
+            gallery.setPlace(galleryDetails.getPlace());
+            gallery.setContent(galleryDetails.getContent());
+            gallery.setImage(galleryDetails.getimage());       
+            gallery.setPostShortDescription(galleryDetails.getPostShortDescription());
             return galleryRepository.save(gallery);
         }
         return null;
