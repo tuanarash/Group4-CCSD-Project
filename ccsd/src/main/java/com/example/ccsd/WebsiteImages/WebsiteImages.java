@@ -1,6 +1,5 @@
-package com.example.ccsd.WebsiteImages;
+package com.example.ccsd.WebsiteImages; // Import Package
 
-import java.util.Date;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -11,7 +10,6 @@ public class WebsiteImages {
     // Define the variables
     @Id
     private String id;
-    private String image;
     private String place;
     private String postShortDescription;
     private String tag;
@@ -19,13 +17,14 @@ public class WebsiteImages {
     private String postSlug;
     private String content;
     private String status;
-    private Date date;
+    private String date;
+    private byte[] image;
     
     // Test
     // Constructors
     public WebsiteImages() {}
 
-    public WebsiteImages(String place, String postShortDescription, String tag, String title, String postSlug, String content, String status, Date date, String image) {
+    public WebsiteImages(String place, String postShortDescription, String tag, String title, String postSlug, String content, String status, String date, byte[] image) {
         this.place = place;
         this.postShortDescription = postShortDescription;
         this.tag = tag;
@@ -70,22 +69,21 @@ public class WebsiteImages {
         return status;
     }
 
-    public Date getDate() {  // Return LocalDateTime
+    public String getDate() { 
         return date;
     }
 
-    public String getImage() {
+    public byte[] getImage() {
         return image;
     }
 
-    // Setter methods (to modify private fields)
 
     // Setter methods (to modify private fields)
     public void setId(String id) {
         this.id = id;
     } 
 
-    public void setImage(String image) {  // Set image field
+    public void setImage(byte[] image) {  // Set image field
         this.image = image;
     }
 
@@ -117,7 +115,7 @@ public class WebsiteImages {
         this.status = status;
     }
 
-    public void setDate(Date date) { 
+    public void setDate(String date) { 
         this.date = date;
     }
 
