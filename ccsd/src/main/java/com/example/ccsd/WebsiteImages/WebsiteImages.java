@@ -18,13 +18,13 @@ public class WebsiteImages {
     private String title;
     private String postSlug;
     private String content;
-    private Boolean status;
+    private String status;
     private LocalDateTime date;
 
     // Constructors
     public WebsiteImages() {}
 
-    public WebsiteImages(String place, String postShortDescription, String tag, String title, String postSlug, String content, Boolean status, LocalDateTime date, String image) {
+    public WebsiteImages(String place, String postShortDescription, String tag, String title, String postSlug, String content, String status, LocalDateTime date, String image) {
         this.place = place;
         this.postShortDescription = postShortDescription;
         this.tag = tag;
@@ -65,7 +65,7 @@ public class WebsiteImages {
         return content;
     }
 
-    public Boolean getStatus() {
+    public String getStatus() {
         return status;
     }
 
@@ -112,7 +112,7 @@ public class WebsiteImages {
         this.content = content;
     }
 
-    public void setStatus(Boolean status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 
