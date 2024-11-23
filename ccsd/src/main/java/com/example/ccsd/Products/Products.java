@@ -12,7 +12,7 @@ public class Products{
     @Id
     private String id;
     private String title;
-    private String PostSlug;
+    private String postSlug;
     private Date date;
     private String status;
     private String tag;
@@ -24,10 +24,10 @@ public class Products{
     //Constructors
     public Products() {}
 
-    public Products(String title, String PostSlug, Date date, String status, 
+    public Products(String title, String postSlug, Date date, String status, 
     String tag, String place, String content, String image, String postShortDescription) {
         this.title = title;
-        this.PostSlug = PostSlug;
+        this.postSlug = postSlug;
         this.date = date;
         this.status = status;
         this.tag = tag;
@@ -55,11 +55,11 @@ public class Products{
     }
 
     public String getPostSlug() {
-        return PostSlug;
+        return postSlug;
     }
 
-    public void setPostSlug(String PostSlug) {
-        this.PostSlug = PostSlug;
+    public void setPostSlug(String postSlug) {
+        this.postSlug = postSlug;
     }
 
     public Date getDate() {
