@@ -1,5 +1,5 @@
 package com.example.ccsd.Users;
-import java.util.Date;
+
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -17,18 +17,15 @@ public class users {
     private String address;
     private String password;
     private String showPassword;
-    private String image;
+    private byte[] image;
     private String userName;
-    private Date dob;
+    private String dob;
     private String role;
-    //private String Country;
-    //private String Company;
-    //private String Begin;
-    //private Date Expiry;
+    
 
     public users() {}
 
-    public users(String firstName, String lastName, String phone, String email, String address, String password, String showPassword, String image, String userName, Date dob,
+    public users(String firstName, String lastName, String phone, String email, String address, String password, String showPassword, byte[] image, String userName, String dob,
     String role) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -108,11 +105,11 @@ public class users {
     }
 
 
-    public String getimage() {
+    public byte[] getimage() {
         return image;
     }
 
-    public void setimage(String image) {
+    public void setimage(byte[] image) {
         this.image = image;
     }
 
@@ -123,10 +120,10 @@ public class users {
         this.userName = userName;
     }
 
-    public Date getdob() {
+    public String getdob() {
         return dob;
     }
-    public void setdob(Date dob) {
+    public void setdob(String dob) {
         this.dob = dob;
     }
 

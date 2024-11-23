@@ -11,7 +11,7 @@ const GetItemsAdmin = {
 
     try {
       const response = await axios.get(
-        `${API_BASE_URL}/view_teams_admin`,
+        `${API_BASE_URL}/api/users`,
 
         {
           // request headers
@@ -39,13 +39,13 @@ const GetItemsAdmin = {
     
   },
 
-  async getTeamDataAdminEdit(user_id) {
+  async getTeamDataAdminEdit(id) {                  //change here user_id to id
     const token = await localStorage.getItem('jwtToken');
 
     
     try {
       const response = await axios.get(
-        `${API_BASE_URL}/view_teams_admin_edit/${user_id}`,
+        `${API_BASE_URL}/api/users/${id}`, //change here user_id to id
 
         {
           // request headers
@@ -56,7 +56,7 @@ const GetItemsAdmin = {
         }
       );
   
-      console.log(response.data.first_name)      
+      console.log(response.data.firstName)      //change first_name to firstName
       if (response.status === 200) {
         return response.data;
       }
@@ -79,7 +79,7 @@ const GetItemsAdmin = {
 
     try {
       const response = await axios.get(
-        `${API_BASE_URL}/view_clients_admin`,
+        `${API_BASE_URL}/api/users`,
         {
           // request headers
           headers: {
@@ -106,13 +106,13 @@ const GetItemsAdmin = {
     
   },
 
-    async getTeamDataAdminEdit(user_id) {
+    async getTeamDataAdminEdit(id) {               //change here user_id to id
     const token = await localStorage.getItem('jwtToken');
 
     
     try {
       const response = await axios.get(
-        `${API_BASE_URL}/view_teams_admin_edit/${user_id}`,
+        `${API_BASE_URL}/api/users/${id}`,      //change here user_id to id
 
         {
           // request headers
@@ -123,7 +123,7 @@ const GetItemsAdmin = {
         }
       );
   
-      console.log(response.data.first_name)      
+      console.log(response.data.firstName)      //change first_name to firstName
       if (response.status === 200) {
         return response.data;
       }
