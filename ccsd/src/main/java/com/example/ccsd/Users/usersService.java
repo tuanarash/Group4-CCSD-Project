@@ -1,5 +1,4 @@
 package com.example.ccsd.Users;
-
 import java.util.List;
 import java.util.Optional;
 
@@ -37,17 +36,16 @@ public class usersService {
             // Get from database
 
             users Users = UsersOpt.get();
-            Users.setFirstName(UsersDetails.getFirstName());
-            Users.setLastname(UsersDetails.getLastname());
-            Users.setPhone(UsersDetails.getPhone());
-            Users.setEmail(UsersDetails.getEmail());
-            Users.setAddress(UsersDetails.getAddress());
-            Users.setPassword(UsersDetails.getPassword());
-            Users.setShowPassword(UsersDetails.getShowPassword());
-            Users.setImage(UsersDetails.getImage());
+            Users.setfirstName(UsersDetails.getfirstName());
+            Users.setlastName(UsersDetails.getlastName());
+            Users.setphone(UsersDetails.getphone());
+            Users.setemail(UsersDetails.getemail());
+            Users.setaddress(UsersDetails.getaddress());
+            Users.setpassword(UsersDetails.getpassword());
+            Users.setimage(UsersDetails.getimage());
             Users.setuserName(UsersDetails.getuserName());
-            Users.setDob(UsersDetails.getDob());
-            Users.setRole(UsersDetails.getRole());
+            Users.setdob(UsersDetails.getdob());
+            Users.setrole(UsersDetails.getrole());
             return usersRepository.save(Users);
         }
         return null;

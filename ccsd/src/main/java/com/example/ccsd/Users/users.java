@@ -10,35 +10,36 @@ public class users {
     
     @Id
     private String id;
-    private String FirstName;
-    private String Lastname;
-    private String Phone;
-    private String Email;
-    private String Address;
-    private String Password;
-    private String ShowPassword;
-    private String Image;
+    private String firstName;
+    private String lastName;
+    private String phone;
+    private String email;
+    private String address;
+    private String password;
+    //private String ShowPassword;
+    private String image;
     private String userName;
-    private Date Dob;
-    private String Role;
+    private Date dob;
+    private String role;
+    //private String Country;
+    //private String Company;
+    //private String Begin;
+    //private Date Expiry;
 
     public users() {}
 
-    public users(String FirstName, String Lastname, String Phone, String Email, String Address, String Password, String ShowPassword, String Image, String userName, Date Dob,
-    String Role) {
-        this.FirstName = FirstName;
-        this.Lastname = Lastname;
-        this.Phone = Phone;
-        this.Email = Email;
-        this.Address = Address;
-        this.Password = Password;
-        this.ShowPassword = ShowPassword;
-        this.Image = Image;
+    public users(String firstName, String lastName, String phone, String email, String address, String password, String image, String userName, Date dob,
+    String role) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.phone = phone;
+        this.email = email;
+        this.address = address;
+        this.password = password;
+        this.image = image;
         this.userName = userName;
-        this.Dob = Dob;
-        this.Role = Role;
-
-
+        this.dob = dob;
+        this.role = role;
     }
         
     public String getId() {
@@ -49,68 +50,60 @@ public class users {
         this.id = id;
     }
     
-    public String getFirstName() {
-        return FirstName;
+    public String getfirstName() {
+        return firstName;
     }
 
-    public void setFirstName(String FirstName) {
-        this.FirstName = FirstName;
+    public void setfirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getLastname() {
-        return Lastname;
+    public String getlastName() {
+        return lastName;
     }
 
-    public void setLastname(String Lastname) {
-        this.Lastname = Lastname;
+    public void setlastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    public String getPhone() {
-        return Phone;
+    public String getphone() {
+        return phone;
     }
 
-    public void setPhone(String Phone) {
-        this.Phone = Phone;
+    public void setphone(String phone) {
+        this.phone = phone;
     }
 
-    public String getEmail() {
-        return Email;
+    public String getemail() {
+        return email;
     }
 
-    public void setEmail(String Email) {
-        this.Email = Email;
+    public void setemail(String email) {
+        this.email = email;
     }
 
-    public String getAddress() {
-        return Address;
+    public String getaddress() {
+        return address;
     }
 
-    public void setAddress(String Address) {
-        this.Address = Address;
+    public void setaddress(String address) {
+        this.address = address;
     }
 
-    public String getPassword() {
-        return Password;
+    public String getpassword() {
+        return password;
     }
 
-    public void setPassword(String Password) {
-        this.Password = Password;
+    public void setpassword(String password) {
+        this.password = password;
     }
 
-    public String getShowPassword() {
-        return ShowPassword;
+    public String getimage() {
+        return image;
     }
 
-    public void setShowPassword(String ShowPassword) {
-        this.ShowPassword = ShowPassword;
-    }
-
-    public String getImage() {
-        return Image;
-    }
-
-    public void setImage(String Image) {
-        this.Image = Image;
+    public void setimage(String image) {
+        this.image = image;
     }
 
     public String getuserName() {
@@ -120,19 +113,19 @@ public class users {
         this.userName = userName;
     }
 
-    public Date getDob() {
-        return Dob;
+    public Date getdob() {
+        return dob;
     }
-    public void setDob(Date Dob) {
-        this.Dob = Dob;
-    }
-
-    public String getRole() {
-        return Role;
+    public void setdob(Date dob) {
+        this.dob = dob;
     }
 
-    public void setRole(String Role) {
-        this.Role = Role;
+    public String getrole() {
+        return role;
+    }
+
+    public void setrole(String role) {
+        this.role = role;
     }
 
 }
