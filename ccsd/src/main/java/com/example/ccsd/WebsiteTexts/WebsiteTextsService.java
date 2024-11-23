@@ -39,7 +39,7 @@ public class WebsiteTextsService {
             WebsiteTexts websiteTexts = WebsiteTextsOpt.get();
             websiteTexts.setTitle(websiteTextsDetails.getTitle());
             websiteTexts.setContent(websiteTextsDetails.getContent());
-            websiteTexts.setShortDescription(websiteTextsDetails.getShortDescription());
+            websiteTexts.setPostShortDescription(websiteTextsDetails.getPostShortDescription());
             websiteTexts.setTag(websiteTextsDetails.getTag());
             websiteTexts.setStatus(websiteTextsDetails.getStatus());
             websiteTexts.setPlace(websiteTextsDetails.getPlace());

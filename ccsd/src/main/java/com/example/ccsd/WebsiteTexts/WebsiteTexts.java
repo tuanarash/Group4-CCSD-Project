@@ -11,7 +11,7 @@ public class WebsiteTexts {
     private String id;
     private String title;  // Matches setTitle in AddWebsiteText.jsx
     private String content;
-    private String shortDescription; // Matches setPostShortDescription in AddWebsiteText.jsx
+    private String postShortDescription; // Matches setPostShortDescription in AddWebsiteText.jsx
     private String tag; // Matches setTag in AddWebsiteText.jsx
     private String status; // Matches setStatus in AddWebsiteText.jsx
     private String place; // Matches setPlace in AddWebsiteText.jsx
@@ -23,10 +23,10 @@ public class WebsiteTexts {
 
     // Constructor
     public WebsiteTexts(String id, String title, String headerText, String footerText, String bodyText,
-                        String shortDescription, String tag, String status, String place,
+                        String postShortDescription, String tag, String status, String place,
                         String date, String postSlug, byte[] image, String content) {
         this.id = id;
-        this.shortDescription = shortDescription;
+        this.postShortDescription = postShortDescription;
         this.tag = tag;
         this.title = title;
         this.postSlug = postSlug;
@@ -47,8 +47,8 @@ public class WebsiteTexts {
     public String getContent() {return content;}
     public void setContent(String content) {this.content = content;}
 
-    public String getShortDescription() {return shortDescription;}
-    public void setShortDescription(String shortDescription) {this.shortDescription = shortDescription;}
+    public String getPostShortDescription() {return postShortDescription;}
+    public void setPostShortDescription(String postShortDescription) {this.postShortDescription = postShortDescription;}
 
     public String getTag() {return tag;}
     public void setTag(String tag) {this.tag = tag;}
