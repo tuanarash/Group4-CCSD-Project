@@ -30,7 +30,7 @@ const AddProduct = () => {
     const [tag, setTag] = useState(null);
     const [place, setPlace] = useState(null);
     const [title, setTitle] = useState(null);
-    const [PostSlug, setPostSlug] = useState(null);
+    const [postSlug, setPostSlug] = useState(null);
     const [status, setStatus] = useState(null);
     const [date, setDate] = useState(null);
     
@@ -69,7 +69,7 @@ const AddProduct = () => {
         event.preventDefault(); // Prevent the default form submission behavior
       
         try {
-          const success = await SaveItemsAdmin.addProductAdmin(place, postShortDescription, tag, title, PostSlug, content, status, date, image);
+          const success = await SaveItemsAdmin.addProductAdmin(place, postShortDescription, tag, title, postSlug, content, status, date, image);
           
           if (success) {
             navigate("/services");
