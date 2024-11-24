@@ -17,9 +17,10 @@ const TeamAdmin = () => {
 
     useEffect(() => {
         GetItemsAdmin.getTeamDataAdmin()
-            .then((result) => {
+            .then((data) => {
                 // Assuming result.data is the array you want
-                const teamData = result.data || [];
+                const teamData = data|| [];
+                
                 setTeamDetails(teamData);
             })
             .catch((error) => {
@@ -27,7 +28,7 @@ const TeamAdmin = () => {
             });
     }, []);
     
-    
+
 
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
@@ -36,17 +37,17 @@ const TeamAdmin = () => {
 
     const columns = [
         { field: "id", headerName: "ID" },
-        { field: "name", headerName: "NAME", flex: 1, cellClassName: "name-column--cell" },
-        { field: "phone", headerName: "PHONE#", flex: 1 },
+        { field: "userName", headerName: "USERNAME", flex: 1, cellClassName: "name-column--cell" },
+        { field: "phone", headerName: "PHONE", flex: 1 },
         { field: "email", headerName: "EMAIL", flex: 1 },
         {
             field: "access",
-            headerName: "ACCESS",
+            headerName: "ONLINE",
             flex: 1,
             renderCell: ({ row: { access } }) => {
                 return (
                     <Box
-                        width="60%"
+                        width="90%"
                         m="0 auto"
                         p="5px"
                         justifyContent="center"

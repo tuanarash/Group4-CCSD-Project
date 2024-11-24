@@ -25,7 +25,7 @@ import { useParams } from 'react-router-dom';
 const EditTeam = () => {
     const [teamDetails, setTeamDetails] = useState({});
     const [loading, setLoading] = useState(true); // New loading state
-    const { user_id } = useParams();
+    const { id } = useParams();
     const [firstName, setFirstName] = useState("");
     const [password, setPassword] = useState("");
     const [lastName, setLastname] = useState("");
@@ -37,14 +37,14 @@ const EditTeam = () => {
     const [image, setImage] = useState(null);
     const [email, setEmail] = useState("");
     useEffect(() => {
-      GetItemsAdmin.getTeamDataAdminEdit(user_id)
+      GetItemsAdmin.getTeamDataAdminEdit(id)
         .then((result) => {
           const teamData = result || {};
-          setFirstName(teamData.first_name);
+          setFirstName(teamData.firstName);
           setEmail(teamData.email);
-          setLastname(teamData.last_name);
+          setLastname(teamData.lastName);
           setEmail(teamData.email);
-          setuserName(teamData.user_name);
+          setuserName(teamData.userName);
           setDob(teamData.dob);
           setRole(teamData.access);
           setPhone(teamData.phone);
@@ -56,7 +56,7 @@ const EditTeam = () => {
         .catch((error) => {
           console.error("Error fetching team data:", error);
         });
-    }, [user_id]);
+    }, [id]);
   
 
     const theme = useTheme();
@@ -83,7 +83,7 @@ const EditTeam = () => {
         event.preventDefault(); // Prevent the default form submission behavior
       
         try {
-          const success = await EditItemsAdmin.editTeamSave(email, password, firstName, lastName, phone, address, role, userName, dob, image, user_id);
+          const success = await EditItemsAdmin.editTeamSave(email, password, firstName, lastName, phone, address, role, userName, dob, image, id);
           
           if (success) {
             navigate("/dashboard-admin");
@@ -108,7 +108,7 @@ const EditTeam = () => {
                     value={firstName}
                     onChange={(e) => setFirstName(e.target.value)}
                     label="Enter Your First Name"
-                    id="first_name"
+                    id="firstName"
                     sx={{ m: 1, width: '30%' }}
                     variant="filled"
                 />
@@ -116,7 +116,7 @@ const EditTeam = () => {
                     onChange={(e) => setuserName(e.target.value)}
                     value={userName}
                     label="Enter Desired User Name"
-                    id="user_name"
+                    id="userName"
                     sx={{ m: 1, width: '30%' }}
                     variant="filled"
                 />
@@ -132,7 +132,7 @@ const EditTeam = () => {
                     onChange={(e) => setLastname(e.target.value)}
                     value={lastName}
                     label="Enter Your Last Name"
-                    id="last_name"
+                    id="lastName"
                     sx={{ m: 1, width: '30%' }}
                     variant="filled"
                 />

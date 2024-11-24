@@ -16,19 +16,17 @@ public class users {
     private String email;
     private String address;
     private String password;
-    //private String showPassword;
     private String role;
     private String userName;
     private String dob;
-    
-    private byte[] image;
+    private String image;
     
 
     public users() {}
 
     //Constructor
-    public users(String email, String password, String firstName, String lastName, String phone, String address, String role, /*String showPassword,*/ String userName, String dob,
-    byte[] image) {
+    public users(String email, String password, String firstName, String lastName, String phone, String address, String role, String userName, String dob,
+    String image) {
         this.email = email;
         this.password = password;
         this.firstName = firstName;
@@ -36,7 +34,6 @@ public class users {
         this.phone = phone;
         this.address = address;
         this.role = role;
-        //this.showPassword = showPassword;
         this.userName = userName;
         this.dob = dob;
         this.image = image;
@@ -99,20 +96,11 @@ public class users {
         this.password = password;
     }
 
-    /*public String getshowPassword() {
-        return showPassword;
-    }
-
-    public void setshowPassword(String showPassword) {
-        this.showPassword = showPassword;
-    }*/
-
-
-    public byte[] getimage() {
+    public String getimage() {
         return image;
     }
 
-    public void setimage(byte[] image) {
+    public void setimage(String image) {
         this.image = image;
     }
 

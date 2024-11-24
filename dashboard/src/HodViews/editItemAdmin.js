@@ -5,49 +5,48 @@ axios.defaults.withCredentials = true;
 const API_BASE_URL = 'http://127.0.0.1:8000';
 
 const EditItemsAdmin = {
-  async editTeamSave(email, password, firstName, lastName, phone, address, role, userName, dob, image, user_id) {
+  async editTeamSave(email, password, firstName, lastName, phone, address, role, userName, dob, image, id) {
     const token = await localStorage.getItem('jwtToken');
-    const username = await localStorage.getItem('userName');
+    //const username = await localStorage.getItem('userName');
+
+     // Create image URL
+     const imageUrl = image ? URL.createObjectURL(image) : null;
 
     try {
       const formData = new FormData();
-      formData.append('username', username);
+      formData.append('userName', userName);
       formData.append('email', email);
       formData.append('password', password);
-      formData.append('first_name', firstName);
-      formData.append('last_name', lastName);
+      formData.append('firstName', firstName);
+      formData.append('lastName', lastName);
       formData.append('phone', phone);
       formData.append('address', address);
       formData.append('role', role);
       formData.append('dob', dob);
-      formData.append('user_id', user_id);
+      formData.append('id', id);
+      //formData.append('image', imageUrl);
       if (image) {
         formData.append('image', image); // Assuming 'image' is the key on the server to handle file uploads
       }
 
       const response = await axios.post(
-        `${API_BASE_URL}/edit_team/`,
+        `${API_BASE_URL}/api/users`,
         formData,
         {
           headers: {
-            'Content-Type': 'multipart/form-data', // Set content type to multipart/form-data for file uploads
+            'Content-Type': 'application/json', // Set content type to multipart/form-data for file uploads
             Authorization: `Bearer ${token}`,
           },
         }
       );
 
-      if (response.status === 200) {
+      if (response.status === 200 && response.status < 300) {
         return response.data;
       }
+      throw new Error('Failed to save team member')
     } catch (error) {
-      if (error.response) {
-        console.error('Server responded with an error:', error.response.data);
-      } else if (error.request) {
-        console.error('No response received:', error.request);
-      } else {
-        console.error('Error setting up the request:', error.message);
-      }
-      throw error;
+      console.error('Error details:', error.response?.data || error.message);
+      throw new Error(error.response.data?.message || 'Failed to save team member')
     }
   },
   async editAgentSave(email, password, firstName, lastName, phone, address, userName, image, user_id, expiry, begin, company, country) {

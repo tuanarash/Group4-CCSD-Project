@@ -75,14 +75,14 @@ const AddTeam = () => {
                 <TextField
                 onChange={(e) => setFirstName(e.target.value)}
                 label="Enter Your First Name"
-                id="first_name"
+                id="firstName"
                 sx={{ m: 1, width: '30%' }}
                 variant="filled"
                 />
                 <TextField
                 onChange={(e) => setuserName(e.target.value)}
                 label="Enter Desired User Name"
-                id="user_name"
+                id="userName"
                 sx={{ m: 1, width: '30%' }}
                 variant="filled"
                 />
@@ -96,7 +96,7 @@ const AddTeam = () => {
                 <TextField
                 onChange={(e) => setLastname(e.target.value)}
                 label="Enter Your Last Name"
-                id="last_name"
+                id="lastName"
                 sx={{ m: 1, width: '30%' }}
                 variant="filled"
                 />
@@ -176,10 +176,10 @@ const AddTeam = () => {
                 <FormHelperText id="filled-dob-helper-text">Date of Birth</FormHelperText>
                 </FormControl>
                 <FormControl sx={{ m: 1, width: '30%' }} variant="filled">
-                    <InputLabel htmlFor="image-upload">Upload Image</InputLabel>
+                    <InputLabel htmlFor="image_upload">Upload Image</InputLabel>
                     <Input
                         accept="image/*"
-                        id="image-upload"
+                        id="image_upload"
                         type="file"
                         onChange={handleImageChange}
                         endAdornment={
@@ -188,7 +188,7 @@ const AddTeam = () => {
                                     aria-label="upload image"
                                     edge="end"
                                     component="label"
-                                    htmlFor="image-upload"
+                                    htmlFor="image_upload"
                                 >
                                     <PhotoCamera />
                                 </IconButton>

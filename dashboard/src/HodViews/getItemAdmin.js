@@ -9,6 +9,8 @@ const GetItemsAdmin = {
     const token = await localStorage.getItem('jwtToken');
     const username = await localStorage.getItem('userName');
 
+    //const imageUrl = image ? URL.createObjectURL(image) : null;
+
     try {
       const response = await axios.get(
         `${API_BASE_URL}/api/users`,
@@ -21,9 +23,22 @@ const GetItemsAdmin = {
           }
         }
       );
+
       
-            
       if (response.status === 200) {
+        return response.data;
+ 
+        
+      }
+      
+      
+
+    //  throw new Error('Failed to save team member')
+    } catch (error) {
+      console.error('Error details:', error.response?.data || error.message);
+      throw new Error(error.response.data?.message || 'Failed to save team member')
+    }        
+    /*  if (response.status === 200) {
         return response.data;
       }
     } catch (error) {
@@ -35,7 +50,7 @@ const GetItemsAdmin = {
         console.error('Error setting up the request:', error.message);
       }
       throw error;
-    }
+    }*/
     
   },
 
@@ -56,26 +71,20 @@ const GetItemsAdmin = {
         }
       );
   
-      console.log(response.data.first_name)      //change first_name to firstName
-      if (response.status === 200) {
+      if (response.status === 200 && response.status < 300) {
         return response.data;
       }
+      throw new Error('Failed to get data team member')
     } catch (error) {
-      if (error.response) {
-        console.error('Server responded with an error:', error.response.data);
-      } else if (error.request) {
-        console.error('No response received:', error.request);
-      } else {
-        console.error('Error setting up the request:', error.message);
-      }
-      throw error;
+      console.error('Error details:', error.response?.data || error.message);
+      throw new Error(error.response.data?.message || 'Failed to get data team member')
     }
     
   },
 
   async getClientDataAdmin() {
     const token = await localStorage.getItem('jwtToken');
-    //const username = await localStorage.getItem('userName');
+    const username = await localStorage.getItem('userName');
 
     try {
       const response = await axios.get(
@@ -106,7 +115,7 @@ const GetItemsAdmin = {
     
   },
 
-  /*  async getTeamDataAdminEdit(id) {               //change here user_id to id
+  async getTeamDataAdminEdit(id) {               //change here user_id to id
     const token = await localStorage.getItem('jwtToken');
 
     
@@ -138,7 +147,7 @@ const GetItemsAdmin = {
       throw error;
     }
     
-  }, */
+  }
 
 
 };
