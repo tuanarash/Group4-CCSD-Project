@@ -7,34 +7,47 @@ const API_BASE_URL = 'http://localhost:8082';
 const SaveItemsAdmin = {
   async addTeamSave(email, password, firstName, lastName, phone, address, role, userName, dob, image) {
     const token = await localStorage.getItem('jwtToken');
-    const username = await localStorage.getItem('userName');
+    //const username = await localStorage.getItem('userName');
+
+    // Create image URL
+    const imageUrl = image ? URL.createObjectURL(image) : null;
 
     try {
       const formData = new FormData();
-      formData.append('username', userName);
+      //formData.append('author', userName);
       formData.append('email', email);
       formData.append('password', password);
-      formData.append('first_name', firstName);
-      formData.append('last_name', lastName);
+      formData.append('firstName', firstName);
+      formData.append('lastName', lastName);
       formData.append('phone', phone);
       formData.append('address', address);
       formData.append('role', role);
+      formData.append('userName', userName);
       formData.append('dob', dob);
-      if (image) {
-        formData.append('image', image); // Assuming 'image' is the key on the server to handle file uploads
-      }
+      formData.append('image', imageUrl);
+      // if (image) {
+      //   formData.append('image', image); // Assuming 'image' is the key on the server to handle file uploads
+      // }
 
       const response = await axios.post(
         `${API_BASE_URL}/api/users`,
         formData,
         {
           headers: {
-            'Content-Type': 'application/JSON', // Set content type to multipart/form-data for file uploads
+            'Content-Type': 'application/json', // Set content type to multipart/form-data for file uploads
             Authorization: `Bearer ${token}`,
           },
         }
       );
 
+    //  if (response.status === 200) {
+    //    return response.data;
+    //  }
+    //   throw new Error('Failed to save team member')
+    // } catch (error) {
+    //   console.error('Error details:', error.response?.data || error.message);
+    //   throw new Error(error.response.data?.message || 'Failed to save team member')
+    // }
       if (response.status === 200) {
         return response.data;
       }
@@ -48,15 +61,19 @@ const SaveItemsAdmin = {
       }
       throw error;
     }
+    
   },
 
   async addProductAdmin( postShortDescription, tag, title, postSlug, content, status, date, image, place) {
     const token = await localStorage.getItem('jwtToken');
-    const username = await localStorage.getItem('userName');
+    //const username = await localStorage.getItem('userName');
+
+    // Create image URL
+    const imageUrl = image ? URL.createObjectURL(image) : null;
 
     try {
       const formData = new FormData();
-      formData.append('author', username);
+      //formData.append('author', userName);
       formData.append('postShortDescription', postShortDescription);
       formData.append('tag', tag);
       formData.append('place', place);
@@ -65,17 +82,18 @@ const SaveItemsAdmin = {
       formData.append('content', content);
       formData.append('status', status);
       formData.append('date', date);
+      formData.append('image', imageUrl);
 
-      if (image) {
-        formData.append('image', image); // Assuming 'image' is the key on the server to handle file uploads
-      }
+      // if (image) {
+      //   formData.append('image', image); // Assuming 'image' is the key on the server to handle file uploads
+      // }
 
       const response = await axios.post(
         `${API_BASE_URL}/api/Products`,
         formData,
         {
           headers: {
-            'Content-Type': 'application/JSON', // Set content type to multipart/form-data for file uploads
+            'Content-Type': 'application/json', // Set content type to multipart/form-data for file uploads
             Authorization: `Bearer ${token}`,
           },
         }
@@ -97,11 +115,14 @@ const SaveItemsAdmin = {
   },
   async addGalleryAdmin( place, postShortDescription, tag, title, postSlug, content, status, date, image) {
     const token = await localStorage.getItem('jwtToken');
-    const username = await localStorage.getItem('userName');
+    //const username = await localStorage.getItem('userName');
+
+    // Create image URL
+    const imageUrl = image ? URL.createObjectURL(image) : null;
 
     try {
       const formData = new FormData();
-      formData.append('author', username);
+      //formData.append('author', userName);
       formData.append('postShortDescription', postShortDescription);
       formData.append('tag', tag);
       formData.append('place', place);
@@ -110,17 +131,18 @@ const SaveItemsAdmin = {
       formData.append('content', content);
       formData.append('status', status);
       formData.append('date', date);
+      formData.append('image', imageUrl);
 
-      if (image) {
-        formData.append('image', image); // Assuming 'image' is the key on the server to handle file uploads
-      }
+      // if (image) {
+      //   formData.append('image', image); // Assuming 'image' is the key on the server to handle file uploads
+      // }
 
       const response = await axios.post(
         `${API_BASE_URL}/api/Gallery`,
         formData,
         {
           headers: {
-            'Content-Type': 'application/JSON', // Set content type to multipart/form-data for file uploads
+            'Content-Type': 'application/json', // Set content type to multipart/form-data for file uploads
             Authorization: `Bearer ${token}`,
           },
         }
@@ -142,11 +164,14 @@ const SaveItemsAdmin = {
   },
   async addWebsiteImageAdmin( place, postShortDescription, tag, title, postSlug, content, status, date, image) {
     const token = await localStorage.getItem('jwtToken');
-    const username = await localStorage.getItem('userName');
+    //const username = await localStorage.getItem('userName');
+
+    // Create image URL
+    const imageUrl = image ? URL.createObjectURL(image) : null;
 
     try {
       const formData = new FormData();
-      formData.append('author', username);
+      //formData.append('author', userName);
       formData.append('postShortDescription', postShortDescription);
       formData.append('tag', tag);
       formData.append('place', place);
@@ -155,17 +180,18 @@ const SaveItemsAdmin = {
       formData.append('content', content);
       formData.append('status', status);
       formData.append('date', date);
+      formData.append('image', imageUrl);
 
-      if (image) {
-        formData.append('image', image); // Assuming 'image' is the key on the server to handle file uploads
-      }
+      // if (image) {
+      //   formData.append('image', image); // Assuming 'image' is the key on the server to handle file uploads
+      // }
 
       const response = await axios.post(
         `${API_BASE_URL}/api/WebsiteImages`,
         formData,
         {
           headers: {
-            'Content-Type': 'application/JSON', // Set content type to multipart/form-data for file uploads
+            'Content-Type': 'application/json', // Set content type to multipart/form-data for file uploads
             Authorization: `Bearer ${token}`,
           },
         }
@@ -187,11 +213,14 @@ const SaveItemsAdmin = {
   },
   async addWebsiteTextAdmin( postShortDescription, tag, title, postSlug, content, status, date, image, place) {
     const token = await localStorage.getItem('jwtToken');
-    const username = await localStorage.getItem('userName');
+    //const username = await localStorage.getItem('userName');
+
+    // Create image URL
+    const imageUrl = image ? URL.createObjectURL(image) : null;
 
     try {
       const formData = new FormData();
-      formData.append('author', username);
+      //formData.append('author', userName);
       formData.append('postShortDescription', postShortDescription);
       formData.append('tag', tag);
       formData.append('place', place);
@@ -200,17 +229,18 @@ const SaveItemsAdmin = {
       formData.append('content', content);
       formData.append('status', status);
       formData.append('date', date);
+      formData.append('image', imageUrl);
 
-      if (image) {
-        formData.append('image', image); // Assuming 'image' is the key on the server to handle file uploads
-      }
+      // if (image) {
+      //   formData.append('image', image); // Assuming 'image' is the key on the server to handle file uploads
+      // }
 
       const response = await axios.post(
         `${API_BASE_URL}/api/WebsiteTexts`,
         formData,
         {
           headers: {
-            'Content-Type': 'application/JSON', // Set content type to multipart/form-data for file uploads
+            'Content-Type': 'application/json', // Set content type to multipart/form-data for file uploads
             Authorization: `Bearer ${token}`,
           },
         }
