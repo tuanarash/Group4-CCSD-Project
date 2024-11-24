@@ -14,7 +14,7 @@ export const Services = (props) => {
             ? props.data.map((d, i) => (
                 <div key={`${d.name}-${i}`} className="col-md-4">
                   {" "}
-                  <img src={d.img} alt="..." className="team-img" />
+                  <img src={d.img} alt="..." className="services-img" />
                   <div className="service-desc">
                     <h3>{d.name}</h3>
                     <h4>{d.price}</h4>
