@@ -18,12 +18,12 @@ public class WebsiteImages {
     private String content;
     private String status;
     private String date;
-    private byte[] image;
+    private String image;
     
     // Constructors
     public WebsiteImages() {}
 
-    public WebsiteImages(String place, String postShortDescription, String tag, String title, String postSlug, String content, String status, String date, byte[] image) {
+    public WebsiteImages(String place, String postShortDescription, String tag, String title, String postSlug, String content, String status, String date, String image) {
         this.place = place;
         this.postShortDescription = postShortDescription;
         this.tag = tag;
@@ -72,7 +72,7 @@ public class WebsiteImages {
         return date;
     }
 
-    public byte[] getImage() {
+    public String getImage() {
         return image;
     }
 
@@ -82,7 +82,7 @@ public class WebsiteImages {
         this.id = id;
     } 
 
-    public void setImage(byte[] image) {  // Set image field
+    public void setImage(String image) {  // Set image field
         this.image = image;
     }
 
