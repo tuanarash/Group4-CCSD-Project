@@ -1,5 +1,9 @@
 package com.example.ccsd.WebsiteImages;
 import java.util.List;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -11,11 +15,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-//import org.springframework.web.multipart.MultipartFile;
-//import org.springframework.web.bind.annotation.RequestParam;
-
-//import java.io.IOException;
+import org.springframework.web.multipart.MultipartFile;
 
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
@@ -27,7 +29,13 @@ public class WebsiteImagesController {
 
     @GetMapping
     public List<WebsiteImages> getAllImages() {
-        return websiteImagesService.getAllImages();
+        List<WebsiteImages> websiteImagesList = websiteImagesService.getAllImages();
+        return websiteImagesList.stream()
+        .map((websiteImages) -> {
+            websiteImages.setImage64String(websiteImages.getImage64String());
+            return websiteImages;
+        })
+        .collect(Collectors.toList());
     }
 
     @GetMapping("/{id}")
@@ -37,33 +45,38 @@ public class WebsiteImagesController {
                 .orElse(ResponseEntity.notFound().build());
     }
     
-    @PostMapping
-    public WebsiteImages addImage(@RequestBody WebsiteImages image) {
-        return websiteImagesService.addImage(image);
-    }
+    // @PostMapping
+    // public WebsiteImages addImage(@RequestBody WebsiteImages image) {
+    //     return websiteImagesService.addImage(image);
+    // }
 
-    /*@PostMapping
-    public ResponseEntity<WebsiteImages> addImage(@RequestParam("image") MultipartFile image,
-    @RequestParam("place") String place,
-    @RequestParam("postShortDescription") String postShortDescription,
-    @RequestParam("tag") String tag,
+    @PostMapping
+    public ResponseEntity<Map<String, Object>> addWebsiteImage(
     @RequestParam("title") String title,
-    @RequestParam("postSlug") String postSlug,
-    @RequestParam("content") String content,
+    @RequestParam("postShortDescription") String postShortDescription,
+    @RequestParam("date") String date,
     @RequestParam("status") String status,
-    @RequestParam("date") String date) throws IOException {
-       // return websiteImagesService.addImage(image);
+    @RequestParam("tag") String tag,
+    @RequestParam("place") String place,
+    @RequestParam("content") String content,
+    @RequestParam("postSlug") String postSlug,
+    @RequestParam("image") MultipartFile image) throws IOException {
+
         // Convert the image into byte[] array
         byte[] imageBytes = image.getBytes();
 
         // Create WebsiteImages object
         WebsiteImages websiteImage = new WebsiteImages(place, postShortDescription, tag, title, postSlug, content, status, date, imageBytes);
 
-        // Save to the database
+        // Save to the MongoDB
         WebsiteImages savedImage = websiteImagesService.addImage(websiteImage);
 
-        return ResponseEntity.ok(savedImage);
-    }*/
+        Map<String, Object> response = new HashMap<>();
+        response.put("success", true);
+        response.put("product", savedImage);
+
+        return ResponseEntity.ok(response);
+    }
 
     @PutMapping("/{id}")
     public ResponseEntity<WebsiteImages> updateImage(@PathVariable String id, @RequestBody WebsiteImages imageDetails) {
