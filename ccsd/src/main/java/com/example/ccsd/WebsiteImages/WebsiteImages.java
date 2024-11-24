@@ -12,7 +12,7 @@ public class WebsiteImages {
     // Define the variables
     @Id
     private String id;
-    private String place;
+    private Integer place;
     private String postShortDescription;
     private String tag;
     private String title;
@@ -26,7 +26,7 @@ public class WebsiteImages {
     // Constructors
     public WebsiteImages() {}
 
-    public WebsiteImages(String place, String postShortDescription, String tag, String title, String postSlug, String content, String status, String date, byte[] image) {
+    public WebsiteImages(Integer place, String postShortDescription, String tag, String title, String postSlug,String content, String status, String date, byte[] image) {
         this.postShortDescription = postShortDescription;
         this.tag = tag;
         this.place = place;
@@ -48,11 +48,11 @@ public class WebsiteImages {
         this.id = id;
     }
 
-    public String getPlace() {
+    public Integer getPlace() {
         return place;
     }
 
-    public void setPlace(String place) {
+    public void setPlace(Integer place) {
         this.place = place;
     }
 

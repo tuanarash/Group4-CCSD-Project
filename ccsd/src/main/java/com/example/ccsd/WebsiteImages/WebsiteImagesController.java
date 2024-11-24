@@ -48,7 +48,7 @@ public class WebsiteImagesController {
     // @PostMapping
     // public WebsiteImages addImage(@RequestBody WebsiteImages image) {
     //     return websiteImagesService.addImage(image);
-    // }
+    //  }
 
     @PostMapping
     public ResponseEntity<Map<String, Object>> addWebsiteImage(
@@ -57,7 +57,7 @@ public class WebsiteImagesController {
     @RequestParam("date") String date,
     @RequestParam("status") String status,
     @RequestParam("tag") String tag,
-    @RequestParam("place") String place,
+    @RequestParam("place") Integer place,
     @RequestParam("content") String content,
     @RequestParam("postSlug") String postSlug,
     @RequestParam("image") MultipartFile image) throws IOException {
