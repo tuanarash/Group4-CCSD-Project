@@ -69,6 +69,16 @@ const AddWebsiteText = () => {
         try {
           const success = await SaveItemsAdmin.addWebsiteTextAdmin( postShortDescription, tag, title, postSlug, content, status, date, image, place);
           
+          /*const formData = new FormData();
+          formData.append('postShortDescription', postShortDescription);
+          formData.append('tag', tag);
+          formData.append('title', title);
+          formData.append('postSlug', postSlug);
+          formData.append('content', content);
+          formData.append('status', status);
+          formData.append('date', date);
+          formData.append('image', image); // Make sure to handle the image correctly */
+          
           if (success) {
             navigate("/website-components-admin");
           } else {

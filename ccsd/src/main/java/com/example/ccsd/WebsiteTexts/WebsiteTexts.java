@@ -17,14 +17,14 @@ public class WebsiteTexts {
     private String place; // Matches setPlace in AddWebsiteText.jsx
     private String date; // Matches setDate in AddWebsiteText.jsx
     private String postSlug; // Matches setPostSlug in AddWebsiteText.jsx
-    private byte[] image; // Matches setImage in AddWebsiteText.jsx
+    private String image; // Matches setImage in AddWebsiteText.jsx
 
     public WebsiteTexts() {}
 
     // Constructor
     public WebsiteTexts(String id, String title, String headerText, String footerText, String bodyText,
                         String postShortDescription, String tag, String status, String place,
-                        String date, String postSlug, byte[] image, String content) {
+                        String date, String postSlug, String image, String content) {
         this.id = id;
         this.postShortDescription = postShortDescription;
         this.tag = tag;
@@ -65,8 +65,8 @@ public class WebsiteTexts {
     public String getPostSlug() {return postSlug;}
     public void setPostSlug(String postSlug) {this.postSlug = postSlug;}
 
-    public byte[] getImage() {return image;}
-    public void setImage(byte[] image) {this.image = image;}
+    public String getImage() {return image;}
+    public void setImage(String image) {this.image = image;}
 }
     /*@Id
     private String id;
