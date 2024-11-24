@@ -70,6 +70,7 @@ const SaveItemsAdmin = {
 
     // Create image URL
     const imageUrl = image ? URL.createObjectURL(image) : null;
+    //formData.append('image', image);
 
     try {
       const formData = new FormData();
@@ -82,18 +83,18 @@ const SaveItemsAdmin = {
       formData.append('content', content);
       formData.append('status', status);
       formData.append('date', date);
-      formData.append('image', imageUrl);
+      //formData.append('image', imageUrl);
 
-      // if (image) {
-      //   formData.append('image', image); // Assuming 'image' is the key on the server to handle file uploads
-      // }
+       if (image) {
+         formData.append('image', image); // Assuming 'image' is the key on the server to handle file uploads
+       }
 
       const response = await axios.post(
         `${API_BASE_URL}/api/Products`,
         formData,
         {
           headers: {
-            'Content-Type': 'application/json', // Set content type to multipart/form-data for file uploads
+            //'Content-Type': 'application/json', // Set content type to multipart/form-data for file uploads
             Authorization: `Bearer ${token}`,
           },
         }
@@ -131,18 +132,18 @@ const SaveItemsAdmin = {
       formData.append('content', content);
       formData.append('status', status);
       formData.append('date', date);
-      formData.append('image', imageUrl);
+      //formData.append('image', imageUrl);
 
-      // if (image) {
-      //   formData.append('image', image); // Assuming 'image' is the key on the server to handle file uploads
-      // }
+       if (image) {
+         formData.append('image', image); // Assuming 'image' is the key on the server to handle file uploads
+       }
 
       const response = await axios.post(
         `${API_BASE_URL}/api/Gallery`,
         formData,
         {
           headers: {
-            'Content-Type': 'application/json', // Set content type to multipart/form-data for file uploads
+            //'Content-Type': 'application/json', // Set content type to multipart/form-data for file uploads
             Authorization: `Bearer ${token}`,
           },
         }
@@ -240,7 +241,7 @@ const SaveItemsAdmin = {
         formData,
         {
           headers: {
-            'Content-Type': 'application/json', // Set content type to multipart/form-data for file uploads
+          //  'Content-Type': 'application/json', // Set content type to multipart/form-data for file uploads
             Authorization: `Bearer ${token}`,
           },
         }
