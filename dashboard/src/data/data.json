@@ -20,9 +20,9 @@
   },
   "Gallery": [
     {
-      "title": "Program Keusahawanan University to Community",
-      "largeImage": "img/portfolio/photo_2024-11-25_02-31-20.jpg",
-      "smallImage": "img/portfolio/photo_2024-11-25_02-31-20.jpg"
+      "title": "UNIMAS Entrepreneurship Carnival",
+      "largeImage": "img/portfolio/01-large.jpg",
+      "smallImage": "img/portfolio/01-large.jpg"
     },
     {
       "title": "Seni Kita Festival Weekend One",
@@ -30,8 +30,8 @@
       "smallImage": "img/portfolio/02-small.jpg"
     },
     {
-      "title": "Program Mudapreneur@HE anjuran Universiti  Teknikal Malaysia Melaka",
-      "largeImage": "img/portfolio/09-large.jpg",
+      "title": "Let's Bake with Pufflab",
+      "largeImage": "img/portfolio/03-large.jpg",
       "smallImage": "img/portfolio/03-small.jpg"
     },
     {
@@ -67,94 +67,94 @@
   ],
   "Services": [
     {
-      "icon": "fa fa-wordpress",
-      "name": "Lorem ipsum dolor",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.",
-      "price": "1000RM"
+      "icon": "img/services/01-services.jpg",
+      "name": "Cookies and Cream",
+      "text": "Creamy, crumbled chocolate sandwich cookies into vanilla ice cream filling.",
+      "price": "RM 4.00"
     },
     {
-      "icon": "fa fa-cart-arrow-down",
-      "name": "Consectetur adipiscing",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.",
-      "price": "1000RM"
+      "icon": "img/services/02-services.jpg",
+      "name": "Lotus Biscoff",
+      "text": "A surprisingly crunchy bite and a unique taste that is loved all over the world.",
+      "price": "RM 5.00"
     },
     {
-      "icon": "fa fa-cloud-download",
-      "name": "Lorem ipsum dolor",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.",
-      "price": "1000RM"
+      "icon": "img/services/03-services.jpg",
+      "name": "Strawberry",
+      "text": "Get a big burst taste of sweetness of these plump and juicy red berries in your mouth.",
+      "price": "RM 3.00"
     },
     {
-      "icon": "fa fa-language",
-      "name": "Consectetur adipiscing",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.",
-      "price": "1000RM"
+      "icon": "img/services/04-services.jpg",
+      "name": "Soy Cheese",
+      "text": "Creamy and almost sweet, perfect for lactose intolerance and vegan buddy.",
+      "price": "RM 5.00"
     },
     {
-      "icon": "fa fa-plane",
-      "name": "Lorem ipsum dolor",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.",
-      "price": "1000RM"
+      "icon": "img/services/05-services.jpg",
+      "name": "Lemon",
+      "text": "Fresh, cheerful aroma and sourness of lemon is needed to brighten up your day.",
+      "price": "RM 5.00"
     },
     {
-      "icon": "fa fa-pie-chart",
-      "name": "Consectetur adipiscing",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.",
-      "price": "1000RM"
+      "icon": "img/services/06-services.jpg",
+      "name": "Matcha",
+      "text": "Emerald green color and a rich, vegetal taste of matcha from Japan as a filling of cream puff.",
+      "price": "RM 5.00"
     }
   ],
   "Testimonials": [
     {
       "img": "img/testimonials/01.jpg",
-      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
-      "name": "John Doe"
+      "text": "\"The Japanese cream puffs are exceptionally delicious with a unique flavor that keeps customers coming back for more.\"",
+      "name": "Delicious and Unique Flavor"
     },
     {
       "img": "img/testimonials/02.jpg",
-      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
-      "name": "Johnathan Doe"
+      "text": "\"Puff Lab consistently delivers high-quality cream puffs that reflect their dedication to freshness and customer satisfaction.\"",
+      "name": "Commitment to Quality"
     },
     {
       "img": "img/testimonials/03.jpg",
-      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
-      "name": "John Doe"
+      "text": "\"The journey from a university project to a thriving business showcases the team’s impressive entrepreneurial spirit, resilience, and innovation.\"",
+      "name": "Entrepreneurial Spirit"
     },
     {
       "img": "img/testimonials/04.jpg",
-      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
-      "name": "Johnathan Doe"
+      "text": "\"Puff Lab mission to create job opportunities for B40 students is commendable, making it a business with a heart for community welfare.\"",
+      "name": "Social Impact"
     },
     {
       "img": "img/testimonials/05.jpg",
-      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
-      "name": "John Doe"
+      "text": "\"The tagline “One bite is never enough” is memorable and effectively conveys the irresistible appeal of the product.\"",
+      "name": "Strong Brand Presence"
     },
     {
       "img": "img/testimonials/06.jpg",
-      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
-      "name": "Johnathan Doe"
+      "text": "\"Ability to pivot to online sales during the pandemic and expand through events demonstrates adaptability and a strong commitment to growth.\"",
+      "name": "Adaptability and Growth"
     }
   ],
   "Team": [
     {
       "img": "img/team/01.jpg",
-      "name": "John Doe",
-      "job": "Director"
+      "name": "Yazid Rizman",
+      "job": "Operating Manager"
     },
     {
       "img": "img/team/02.jpg",
-      "name": "Mike Doe",
-      "job": "Senior Designer"
+      "name": "Azizah Sayan",
+      "job": "Marketing Manager"
     },
     {
       "img": "img/team/03.jpg",
-      "name": "Jane Doe",
-      "job": "Senior Designer"
+      "name": "Chong Siaw Ting",
+      "job": "Event Manager"
     },
     {
       "img": "img/team/04.jpg",
-      "name": "Karen Doe",
-      "job": "Project Manager"
+      "name": "Syafiq Aiman",
+      "job": "Product Manager"
     }
   ],
   "Contact": {
@@ -168,23 +168,23 @@
   "Features": [
     {
       "icon": "fa fa-comments-o",
-      "title": "Lorem ipsum",
-      "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
+      "title": "OUR VISION",
+      "text": "To be the best crusted cream puff producer in Malaysia."
     },
     {
       "icon": "fa fa-bullhorn",
-      "title": "Lorem ipsum",
-      "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
+      "title": "OUR MISSION",
+      "text": "To create loyal customers that love the uniqueness of our cream puff by ensuring best of quality."
     },
     {
       "icon": "fa fa-group",
-      "title": "Lorem ipsum",
-      "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
+      "title": "OUR GOAL",
+      "text": "To ensure that Puff Lab is easily recognized by everyone."
     },
     {
       "icon": "fa fa-magic",
-      "title": "Lorem ipsum",
-      "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
+      "title": "OUR OBJECTIVE",
+      "text": "To achieve sales targeted at a certain period and produce cream puff that is highly demanded by customers."
     }
   ]
 }
