@@ -3,10 +3,12 @@ package com.example.ccsd.Products;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -37,6 +39,18 @@ public class ProductsController {
     @PostMapping
     public Products addProducts(@RequestBody Products products) {
         return productsService.addProducts(products);
+    }
+
+    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)  //additional postmapping
+    public ResponseEntity<Products> addProductsJson(@RequestBody Products products) {
+        Products savedProducts = productsService.addProducts(products);
+        return ResponseEntity.ok(savedProducts);
+    }
+
+    @PostMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE)  //additional postmapping
+    public ResponseEntity<?> addProductsMultipart(@ModelAttribute Products products) {
+        Products savedProducts = productsService.addProducts(products);
+        return ResponseEntity.ok(savedProducts);
     }
 
     @PutMapping("/{id}")
