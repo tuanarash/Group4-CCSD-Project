@@ -20,7 +20,6 @@ public class WebsiteImages {
     private String date;
     private byte[] image;
     
-    // Test
     // Constructors
     public WebsiteImages() {}
 
