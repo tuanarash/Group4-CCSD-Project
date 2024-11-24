@@ -11,12 +11,14 @@ public class WebsiteImagesService {
     @Autowired
     private WebsiteImagesRepository websiteImagesRepository;
 
-    // Getting all books
+    // Getting all images
+    
     public List<WebsiteImages> getAllImages() {
         return websiteImagesRepository.findAll();
     }
 
-    // Getting single boks
+    // Getting single Image
+
     public Optional<WebsiteImages> getImageById(String id) {
         return websiteImagesRepository.findById(id);
     }
@@ -27,7 +29,7 @@ public class WebsiteImagesService {
         return websiteImagesRepository.save(image);
     }
 
-    // Updating the book
+    // Updating the image
 
     public WebsiteImages updateImage(String id, WebsiteImages imageDetails) {
         Optional<WebsiteImages> imageOpt = websiteImagesRepository.findById(id);
