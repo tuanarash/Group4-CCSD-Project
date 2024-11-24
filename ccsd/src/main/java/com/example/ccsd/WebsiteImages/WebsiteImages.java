@@ -27,9 +27,9 @@ public class WebsiteImages {
     public WebsiteImages() {}
 
     public WebsiteImages(String place, String postShortDescription, String tag, String title, String postSlug, String content, String status, String date, byte[] image) {
-        this.place = place;
         this.postShortDescription = postShortDescription;
         this.tag = tag;
+        this.place = place;
         this.title = title;
         this.postSlug = postSlug;
         this.content = content;
