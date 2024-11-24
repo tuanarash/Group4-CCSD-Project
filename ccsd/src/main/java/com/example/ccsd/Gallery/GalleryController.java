@@ -3,10 +3,12 @@ package com.example.ccsd.Gallery;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -47,6 +49,19 @@ public class GalleryController {
         }
         return ResponseEntity.notFound().build();
     }
+
+    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE) //additional postmapping
+    public ResponseEntity<Gallery> addGalleryJson(@RequestBody Gallery gallery) {
+        Gallery savedGallery = galleryService.addGallery(gallery);
+        return ResponseEntity.ok(savedGallery);
+    }
+
+    @PostMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE) //additional postmapping
+    public ResponseEntity<?> addGalleryMultipart(@ModelAttribute Gallery gallery) {
+        Gallery savedGallery = galleryService.addGallery(gallery);
+        return ResponseEntity.ok(savedGallery);
+    }
+
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteGallery(@PathVariable String id) {

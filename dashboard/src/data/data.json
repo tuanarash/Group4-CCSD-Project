@@ -1,21 +1,21 @@
 {
   "Header": {
-    "title": "We are a Landing Page",
-    "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sed commodo nibh ante facilisis bibendum."
+    "title": "One bite is never enough",
+    "paragraph": "At Puff Lab, one bite is never enough—experience the perfect blend of flavor, quality, and heart in every cream puff!"
   },
   "About": {
-    "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "paragraph": "It all began with an entrepreneurship course, where our group of eight brainstormed business ideas. Among various suggestions, one member proposed Japanese cream puffs, which we eagerly pursued. The idea gained praise, and our lecturer encouraged us to take it further.Eventually, only two of us committed to continuing, later inviting a friend from accounting to join the team. We won several competitions and national awards. During the pandemic, we adapted by shifting to online sales.After two years, we opened a physical shop at Kuching and expanded our market by participating in events across Kuching-Samarahan. With our sights set high, we aim to take the business to the next level.",
     "Why": [
-      "Lorem ipsum dolor",
-      "Tempor incididunt",
-      "Lorem ipsum dolor",
-      "Incididunt ut labore"
+      "The best crusted cream puff producer in Malaysia.",
+      "Supporting B40 students with job opportunities and delivering top-quality, unique cream puffs.",
+      "Provide financial aid to students through social entrepreneurship and build a strong, recognizable brand",
+      "Meet sales targets with highly demanded cream puffs."
     ],
     "Why2": [
-      "Aliquip ex ea commodo",
-      "Lorem ipsum dolor",
-      "Exercitation ullamco",
-      "Lorem ipsum dolor"
+      "We are now on Grab apps. No more depends on our COD days. ",
+      "decorate your own cream puff topping as low as 20cents.",
+      "Ethe perfect treat for a special occasion",
+      "'adhock' order friendly"
     ]
   },
   "Gallery": [
@@ -158,9 +158,9 @@
     }
   ],
   "Contact": {
-    "address": "4321 California St, San Francisco, CA 12345 ",
-    "phone": "+1 123 456 1234",
-    "email": "info@company.com",
+    "address": "Puff Lab PLT, LG, Bangunan HEPA, Universiti Malaysia Sarawak",
+    "phone": "+60 13-311 9957",
+    "email": "puff.lab2020@gmail.com",
     "facebook": "fb.com",
     "twitter": "twitter.com",
     "youtube": "youtube.com"
