@@ -56,7 +56,7 @@ const GetItemsAdmin = {
         }
       );
   
-      console.log(response.data.firstName)      //change first_name to firstName
+      console.log(response.data.first_name)      //change first_name to firstName
       if (response.status === 200) {
         return response.data;
       }
@@ -75,7 +75,7 @@ const GetItemsAdmin = {
 
   async getClientDataAdmin() {
     const token = await localStorage.getItem('jwtToken');
-    const username = await localStorage.getItem('userName');
+    //const username = await localStorage.getItem('userName');
 
     try {
       const response = await axios.get(
@@ -106,7 +106,7 @@ const GetItemsAdmin = {
     
   },
 
-    async getTeamDataAdminEdit(id) {               //change here user_id to id
+  /*  async getTeamDataAdminEdit(id) {               //change here user_id to id
     const token = await localStorage.getItem('jwtToken');
 
     
@@ -123,7 +123,7 @@ const GetItemsAdmin = {
         }
       );
   
-      console.log(response.data.firstName)      //change first_name to firstName
+      console.log(response.data.first_name)      //change first_name to firstName
       if (response.status === 200) {
         return response.data;
       }
@@ -138,7 +138,7 @@ const GetItemsAdmin = {
       throw error;
     }
     
-  },
+  }, */
 
 
 };

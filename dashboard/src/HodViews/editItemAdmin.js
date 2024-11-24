@@ -11,7 +11,7 @@ const EditItemsAdmin = {
 
     try {
       const formData = new FormData();
-      formData.append('username', userName);
+      formData.append('username', username);
       formData.append('email', email);
       formData.append('password', password);
       formData.append('first_name', firstName);
@@ -56,7 +56,7 @@ const EditItemsAdmin = {
 
     try {
       const formData = new FormData();
-      formData.append('username', userName);
+      formData.append('username', username);
       formData.append('email', email);
       formData.append('password', password);
       formData.append('first_name', firstName);

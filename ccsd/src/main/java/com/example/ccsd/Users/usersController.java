@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -47,6 +48,12 @@ public class usersController {
             return ResponseEntity.ok(updatedusers);
         }
         return ResponseEntity.notFound().build();
+    }
+
+    @PostMapping (consumes = "application/JSON")
+    public ResponseEntity<?> addUser (@ModelAttribute users user) {
+        users savedUser = usersService.addusers(user);
+        return ResponseEntity.ok().body(savedUser);
     }
 
     @DeleteMapping("/{id}")
