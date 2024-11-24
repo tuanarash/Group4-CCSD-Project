@@ -16,14 +16,14 @@ public class Gallery{
     private String tag;
     private String place;
     private String content;
-    private byte[] image;
+    private String image;
     private String postShortDescription;
 
     //Constructors
     public Gallery() {}
 
     public Gallery(String title, String postSlug, String date, String status, 
-    String tag, String place, String content, byte[] image, String postShortDescription) {
+    String tag, String place, String content, String image, String postShortDescription) {
         this.title = title;
         this.postSlug = postSlug;
         this.date = date;
@@ -100,11 +100,11 @@ public class Gallery{
         this.content = content;
     }
 
-    public byte[] getimage() {
+    public String getimage() {
         return image;
     }
 
-    public void setImage(byte[] image) {
+    public void setImage(String image) {
         this.image = image;
     }
 

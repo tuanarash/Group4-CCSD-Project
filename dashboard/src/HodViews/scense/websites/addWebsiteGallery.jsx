@@ -42,9 +42,6 @@ const AddWebsiteGallery = () => {
     const functionCloseAiImage=() =>{
         setOpenAiImage(false);
     }
-    
-
-    
 
     const editor = useRef(null)
     const [content, setContent] = useState(null);
@@ -111,6 +108,13 @@ const AddWebsiteGallery = () => {
                 sx={{ m: 1, width: '30.5%' }}
                 variant="filled"
                 />
+                <TextField
+                onChange={(e) => setPostSlug(e.target.value)}
+                label="Enter Product Slug"
+                id="Slug"
+                sx={{ m: 1, width: '30.5%' }}
+                variant="filled"
+                />
                 <FormControl sx={{ m: 1, width: '30.5%' }} variant="filled">
                     <FilledInput
                     onChange={(e) => setDate(e.target.value)}
@@ -156,6 +160,31 @@ const AddWebsiteGallery = () => {
                     
                 >
                 </FilledInput>
+                <FormControl sx={{ m: 1, width: '93%' }} variant="filled">
+                <InputLabel htmlFor="filled-adornment-short-description">Blog Short Description</InputLabel>
+                <FilledInput
+                   onChange={(e) => setPostShortDescription(e.target.value)}
+                    id='short-description'
+                    type='text'
+                    multiline
+                    rows={3}
+                    endAdornment = {
+                        <InputAdornment position='end'>
+                            Use AI to Generate Short Descriptions
+                            <IconButton
+                                
+                                aria-label="short-description"
+                                edge="end"                                        
+                            >
+                            <SmartToyOutlinedIcon></SmartToyOutlinedIcon>
+                            </IconButton>
+                        </InputAdornment>
+                    }
+                    
+                >
+                </FilledInput>
+
+                </FormControl>
                 </FormControl>
                 <FormControl sx={{ m: 1, width: '15.5%' }} variant="filled">
                     <InputLabel id="place">Text Place</InputLabel>

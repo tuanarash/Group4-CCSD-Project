@@ -34,6 +34,7 @@ public class ProductsController {
         return productsService.getProductsById(id)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
+    
     }
 
     @PostMapping

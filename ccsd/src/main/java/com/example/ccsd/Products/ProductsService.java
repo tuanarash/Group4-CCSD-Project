@@ -43,7 +43,7 @@ public class ProductsService {
             products.setTag(productsDetails.getTag());
             products.setPlace(productsDetails.getPlace());
             products.setContent(productsDetails.getContent());
-            products.setImage(productsDetails.getimage());
+            products.setImage(productsDetails.getImage());
             products.setPostShortDescription(productsDetails.getPostShortDescription());
             return productsRepository.save(products);
         }
