@@ -7,8 +7,7 @@ export const Team = (props) => {
         <div className="col-md-8 col-md-offset-2 section-title">
           <h2>Meet the Team</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit duis sed
-            dapibus leonec.
+          A passionate and dedicated trio driven by innovation, quality, and a shared love for crafting the perfect cream puff experience.
           </p>
         </div>
         <div id="row">
