@@ -50,7 +50,7 @@ public class WebsiteImagesService {
             image.setStatus(imageDetails.getStatus());
             image.setTag(imageDetails.getTag());
             image.setPlace(imageDetails.getPlace());
-            image.setContent(imageDetails.getContent());
+            //image.setContent(imageDetails.getContent());
             image.setPostSlug(imageDetails.getPostSlug());
             image.setImage(imageDetails.getImage());
             return websiteImagesRepository.save(image);
