@@ -101,7 +101,7 @@ const AddWebsiteText = () => {
         </Dialog>
         <Header title="Add Website Text" subtitle="Please Fill All the Fields" />
             
-        <Box sx={{ display: 'flex', flexWrap: 'wrap' }} component="form" noValidate >{onSubmit={handleAddBlog}}
+        <Box sx={{ display: 'flex', flexWrap: 'wrap' }} component="form" noValidate >{onSubmit={handleAddBlog}} //buang comment
                 <TextField
                 onChange={(e) => setTitle(e.target.value)}
                 label="Enter Text Title"
@@ -206,7 +206,7 @@ const AddWebsiteText = () => {
               </Button>
 
                 <Button
-                type="submit"
+                type="submit" //kat sini undo comment
                 sx={{ m: 1, width: '46%' }}
                 color='success'
                 variant="contained"
