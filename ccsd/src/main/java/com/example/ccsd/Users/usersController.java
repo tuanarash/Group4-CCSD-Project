@@ -49,12 +49,6 @@ public class usersController {
         return ResponseEntity.notFound().build();
     }
 
-    //@PostMapping (consumes = "MediaType.MULTIPART_FORM_DATA_VALUE")
-    //public ResponseEntity<?> addUser (@ModelAttribute users user) {
-    //    users savedUser = usersService.addusers(user);
-    //    return ResponseEntity.ok().body(savedUser);
-    //}
-
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteusers(@PathVariable String id) {
         usersService.deleteusers(id);
