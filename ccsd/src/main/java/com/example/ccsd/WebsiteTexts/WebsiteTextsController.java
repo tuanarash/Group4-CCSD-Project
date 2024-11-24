@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @CrossOrigin(origins = "http://localhost:3000") // Allow requests from your frontend
 @RestController
-@RequestMapping("api/WebsiteTexts")
+@RequestMapping("api/WebsiteText")
 public class WebsiteTextsController {
     
     @Autowired
