@@ -6,16 +6,14 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-//import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 //import org.springframework.web.multipart.MultipartFile;
-import org.springframework.http.MediaType;
+//import org.springframework.web.bind.annotation.RequestParam;
 
 //import java.io.IOException;
 
@@ -38,17 +36,11 @@ public class WebsiteImagesController {
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
-
-    @PostMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-    public ResponseEntity<?> addImage(@ModelAttribute WebsiteImages image) {
-        WebsiteImages savedImage = websiteImagesService.addImage(image);
-        return ResponseEntity.ok().body(savedImage);
-    }
     
-    /*@PostMapping
+    @PostMapping
     public WebsiteImages addImage(@RequestBody WebsiteImages image) {
         return websiteImagesService.addImage(image);
-    }*/
+    }
 
     /*@PostMapping
     public ResponseEntity<WebsiteImages> addImage(@RequestParam("image") MultipartFile image,
