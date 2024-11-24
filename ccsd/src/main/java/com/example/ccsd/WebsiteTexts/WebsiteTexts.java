@@ -22,19 +22,19 @@ public class WebsiteTexts {
     public WebsiteTexts() {}
 
     // Constructor
-    public WebsiteTexts(String id, String title, String headerText, String footerText, String bodyText,
-                        String postShortDescription, String tag, String status, String place,
-                        String date, String postSlug, String image, String content) {
-        this.id = id;
+    public WebsiteTexts( String postShortDescription, String tag, String title, String postSlug,
+                        String content, String status, String date,  String image, String place ) {
+        
         this.postShortDescription = postShortDescription;
         this.tag = tag;
+        this.place = place;
         this.title = title;
         this.postSlug = postSlug;
         this.content = content;
         this.status = status;
         this.date = date;
         this.image = image;
-        this.place = place;
+        
     }
 
     // Getters and Setters
