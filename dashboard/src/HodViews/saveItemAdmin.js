@@ -90,7 +90,7 @@ const SaveItemsAdmin = {
        }
 
       const response = await axios.post(
-        `${API_BASE_URL}/api/products`,
+        `${API_BASE_URL}/api/Products`,
         formData,
         {
           headers: {
@@ -139,7 +139,7 @@ const SaveItemsAdmin = {
        }
 
       const response = await axios.post(
-        `${API_BASE_URL}/api/gallery`,
+        `${API_BASE_URL}/api/Gallery`,
         formData,
         {
           headers: {
@@ -188,7 +188,7 @@ const SaveItemsAdmin = {
       // }
 
       const response = await axios.post(
-        `${API_BASE_URL}/api/WebsiteImage`,
+        `${API_BASE_URL}/api/WebsiteImages`,
         formData,
         {
           headers: {
@@ -237,7 +237,7 @@ const SaveItemsAdmin = {
       // }
 
       const response = await axios.post(
-        `${API_BASE_URL}/api/WebsiteText`,
+        `${API_BASE_URL}/api/WebsiteTexts`,
         formData,
         {
           headers: {
