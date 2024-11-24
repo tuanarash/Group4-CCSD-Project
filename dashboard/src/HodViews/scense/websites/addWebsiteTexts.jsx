@@ -69,16 +69,6 @@ const AddWebsiteText = () => {
         try {
           const success = await SaveItemsAdmin.addWebsiteTextAdmin( postShortDescription, tag, title, postSlug, content, status, date, image, place);
           
-          /*const formData = new FormData();
-          formData.append('postShortDescription', postShortDescription);
-          formData.append('tag', tag);
-          formData.append('title', title);
-          formData.append('postSlug', postSlug);
-          formData.append('content', content);
-          formData.append('status', status);
-          formData.append('date', date);
-          formData.append('image', image); // Make sure to handle the image correctly */
-          
           if (success) {
             navigate("/website-components-admin");
           } else {
@@ -111,7 +101,7 @@ const AddWebsiteText = () => {
         </Dialog>
         <Header title="Add Website Text" subtitle="Please Fill All the Fields" />
             
-        <Box sx={{ display: 'flex', flexWrap: 'wrap' }} component="form" noValidate >{/*onSubmit={handleAddBlog}*/}
+        <Box sx={{ display: 'flex', flexWrap: 'wrap' }} component="form" noValidate >{onSubmit={handleAddBlog}} //buang comment
                 <TextField
                 onChange={(e) => setTitle(e.target.value)}
                 label="Enter Text Title"
@@ -216,7 +206,7 @@ const AddWebsiteText = () => {
               </Button>
 
                 <Button
-                //type="submit"
+                type="submit" //kat sini undo comment
                 sx={{ m: 1, width: '46%' }}
                 color='success'
                 variant="contained"
