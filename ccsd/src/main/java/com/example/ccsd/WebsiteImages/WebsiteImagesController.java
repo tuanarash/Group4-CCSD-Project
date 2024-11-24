@@ -21,7 +21,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
-@RequestMapping("/api/WebsiteImages")
+@RequestMapping("/api/WebsiteImage")
 public class WebsiteImagesController {
     
     @Autowired
