@@ -29,7 +29,7 @@ const SaveItemsAdmin = {
         formData,
         {
           headers: {
-            'Content-Type': 'multipart/form-data', // Set content type to multipart/form-data for file uploads
+            'Content-Type': 'application/JSON', // Set content type to multipart/form-data for file uploads
             Authorization: `Bearer ${token}`,
           },
         }
@@ -75,7 +75,7 @@ const SaveItemsAdmin = {
         formData,
         {
           headers: {
-            'Content-Type': 'multipart/form-data', // Set content type to multipart/form-data for file uploads
+            'Content-Type': 'application/JSON', // Set content type to multipart/form-data for file uploads
             Authorization: `Bearer ${token}`,
           },
         }
@@ -120,7 +120,7 @@ const SaveItemsAdmin = {
         formData,
         {
           headers: {
-            'Content-Type': 'multipart/form-data', // Set content type to multipart/form-data for file uploads
+            'Content-Type': 'application/JSON', // Set content type to multipart/form-data for file uploads
             Authorization: `Bearer ${token}`,
           },
         }
@@ -165,7 +165,7 @@ const SaveItemsAdmin = {
         formData,
         {
           headers: {
-            'Content-Type': 'multipart/form-data', // Set content type to multipart/form-data for file uploads
+            'Content-Type': 'application/JSON', // Set content type to multipart/form-data for file uploads
             Authorization: `Bearer ${token}`,
           },
         }
@@ -210,7 +210,7 @@ const SaveItemsAdmin = {
         formData,
         {
           headers: {
-            'Content-Type': 'multipart/form-data', // Set content type to multipart/form-data for file uploads
+            'Content-Type': 'application/JSON', // Set content type to multipart/form-data for file uploads
             Authorization: `Bearer ${token}`,
           },
         }

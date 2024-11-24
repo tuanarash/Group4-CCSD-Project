@@ -30,7 +30,7 @@ const Landing = () => {
             <Header data={landingPageData.Header} />
             <Features data={landingPageData.Features} backTextData={backendData.getWebsiteTexts} backendImagaData={backendData.getWebsiteImages} />
             <About data={landingPageData.About} backTextData={backendData.getWebsiteTexts} backendImagaData={backendData.getWebsiteImages} />
-            <Services data={landingPageData.Services} backendProducts={backendData.getPrucuts}/>
+            <Services data={landingPageData.Services} backendProducts={backendData.getProducts}/>
             <Gallery data={landingPageData.Gallery} backGalaleryData={backendData.getWebsiteGallery} />
             <Testimonials data={landingPageData.Testimonials} backTextData={backendData.getWebsiteTestemonies}  />
             <Team data={landingPageData.Team} backTextData={backendData.getWebsiteTeams} />

@@ -5,13 +5,13 @@ axios.defaults.withCredentials = true;
 const API_BASE_URL = 'http://localhost:8082';
 
 const GetData = {
-  async getPrucuts() {
+  async getProducts() {
     const token = await localStorage.getItem('jwtToken');
     const username = await localStorage.getItem('userName');
 
     try {
       const response = await axios.get(
-        `${API_BASE_URL}/view_teams_admin/`,
+        `${API_BASE_URL}/api/Products`,
 
         {
           // request headers
@@ -45,7 +45,7 @@ const GetData = {
     
     try {
       const response = await axios.get(
-        `${API_BASE_URL}/view_teams_admin_edit`,
+        `${API_BASE_URL}/api/WebsiteTexts`,
 
         {
           // request headers
@@ -79,7 +79,7 @@ const GetData = {
 
     try {
       const response = await axios.get(
-        `${API_BASE_URL}/view_clients_admin`,
+        `${API_BASE_URL}/api/WebsiteImages`,
         {
           // request headers
           headers: {
@@ -112,7 +112,7 @@ const GetData = {
     
     try {
       const response = await axios.get(
-        `${API_BASE_URL}/view_teams_admin_edit`,
+        `${API_BASE_URL}/api/Gallery`,
 
         {
           // request headers
@@ -179,7 +179,7 @@ const GetData = {
     
     try {
       const response = await axios.get(
-        `${API_BASE_URL}/view_teams_admin_edit`,
+        `${API_BASE_URL}/api/users`,
 
         {
           // request headers
