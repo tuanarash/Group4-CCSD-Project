@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PutMapping; //baru tambah
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -38,14 +39,14 @@ public class WebsiteTextsController {
         return websiteTextsService.addWebsiteTexts(websiteTexts);
     }
 
-   /*  @PutMapping("/{id}")
-    public ResponseEntity<WebsiteTexts> updateBook(@PathVariable String id, @RequestBody WebsiteTexts websiteTextsDetails) {
+     @PutMapping("/{id}")
+    public ResponseEntity<WebsiteTexts> updateWebsiteTexts(@PathVariable String id, @RequestBody WebsiteTexts websiteTextsDetails) {
         WebsiteTexts updatedWebsiteTexts = websiteTextsService.updateWebsiteTexts(id, websiteTextsDetails);
         if (updatedWebsiteTexts != null) {
             return ResponseEntity.ok(updatedWebsiteTexts);
         }
         return ResponseEntity.notFound().build();
-    }*/
+    }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteWebsiteTexts(@PathVariable String id) {
