@@ -1,18 +1,15 @@
-package com.example.ccsd.WebsiteImages; // Import Package
+package com.example.ccsd.WebsiteImages;
 
 import java.util.Base64;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "WebsiteImages")
-
+@Document(collection = "WebsiteImage")
 public class WebsiteImages {
-
-    // Define the variables
     @Id
     private String id;
-    private Integer place;
+    private String place;
     private String postShortDescription;
     private String tag;
     private String title;
@@ -20,55 +17,65 @@ public class WebsiteImages {
     private String content;
     private String status;
     private String date;
-    private byte[] image;
+    private byte [] image;
     private String image64String;
-    
-    // Constructors
-    public WebsiteImages() {}
 
-    public WebsiteImages(Integer place, String postShortDescription, String tag, String title, String postSlug,String content, String status, String date, byte[] image) {
+
+
+
+    public WebsiteImages(){}
+
+    public WebsiteImages
+    (String id,  String place, String postShortDescription, String tag,  String title, String postSlug, String content , String status, String date,  
+      byte[] image)
+    {
+        this.id = id;
+        this.place = place;
         this.postShortDescription = postShortDescription;
         this.tag = tag;
-        this.place = place;
         this.title = title;
         this.postSlug = postSlug;
         this.content = content;
         this.status = status;
         this.date = date;
         this.image = image;
+
     }
 
-    // Getter methods (to access private fields)
-    public String getId() {
-        return id;
-    } 
 
-    // Setter methods (to modify private fields)
-    public void setId(String id) {
+
+    //getter method
+    public String getId(){
+        return id;
+    }
+
+    //setter method
+    public void setId(String id){
         this.id = id;
     }
 
-    public Integer getPlace() {
+    public String getPlace(){
         return place;
-    }
+     }
 
-    public void setPlace(Integer place) {
+     public void setPlace(String place){
         this.place = place;
     }
 
-    public String getPostShortDescription() {
+
+    public String getpostShortDescription(){
         return postShortDescription;
     }
 
-    public void setPostShortDescription(String postShortDescription) {
+    public void setpostShortDescription(String postShortDescription){
         this.postShortDescription = postShortDescription;
     }
 
-    public String getTag() {
+    public String getTag(){
         return tag;
-    }
+     }
 
-    public void setTag(String tag) {
+     public void setTag(String tag){
         this.tag = tag;
     }
 
@@ -76,7 +83,7 @@ public class WebsiteImages {
         return title;
     }
 
-    public void setTitle(String title) {
+    public void setTitle(String title){
         this.title = title;
     }
 
@@ -84,54 +91,56 @@ public class WebsiteImages {
         return postSlug;
     }
 
-    public void setPostSlug(String postSlug) {
+    public void setPostSlug(String postSlug){
         this.postSlug = postSlug;
     }
 
-    public String getContent() {
+    public String getContent(){
         return content;
-    }
+     }
 
-    public void setContent(String content) {
+     public void setContent(String content){
         this.content = content;
     }
 
-    public String getStatus() {
+    public String getStatus(){
         return status;
-    }
+     }
 
-    public void setStatus(String status) {
+     public void setStatus(String status){
         this.status = status;
     }
 
-    public String getDate() { 
-        return date;
-    }
+    public String getDate(){
+         return date;
+     }
 
-    public void setDate(String date) { 
-        this.date = date;
-    }
+     public void setDate(String date){
+         this.date = date;
+     }
 
-    public byte[] getImage() {
+
+
+    public byte [] getimage(){
         return image;
     }
 
-    public void setImage(byte[] image) {
+    public void setimage(byte[] image){
         this.image = image;
     }
 
-    public String getImageAsBase64() {
+    public String getImageAsBase64(){
         return image != null ? Base64.getEncoder().encodeToString(image) : null;
     }
-    
-    // Set Base64 String
-    public void setImage64String(String image64String) {
+// Set Base64 string
+    public void setImage64String(String image64String){
         this.image64String = image64String;
     }
-    // Return Base64 String
-    public String getImage64String() {
-        return this.image64String;
+ // Return Base64 string
+    public String getImage64String(){
+        return this.image64String;  
     }
 
-    
+
+
 }

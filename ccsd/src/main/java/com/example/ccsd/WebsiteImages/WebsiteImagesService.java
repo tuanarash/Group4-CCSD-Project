@@ -1,4 +1,6 @@
 package com.example.ccsd.WebsiteImages;
+
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -11,59 +13,60 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+
 @Service
 public class WebsiteImagesService {
+    
 
     @Autowired
     private WebsiteImagesRepository websiteImagesRepository;
 
-    // Getting all images
-    
-    public List<WebsiteImages> getAllImages() {
+    // Getting all 
+    public List<WebsiteImages> getAllWebsiteImageses() {
         return websiteImagesRepository.findAll();
     }
 
-    // Getting single Image
-
-    public Optional<WebsiteImages> getImageById(String id) {
+    // Getting single 
+    public Optional<WebsiteImages> getWebsiteImagesById(String id) {
         return websiteImagesRepository.findById(id);
     }
 
     // Creating new data in repository
 
-    public WebsiteImages addImage(WebsiteImages image) {
-        return websiteImagesRepository.save(image);
+    public WebsiteImages addWebsiteImages(WebsiteImages websiteImages) {
+        return websiteImagesRepository.save(websiteImages);
     }
 
-    // Updating the image
+        // Updating 
 
-    public WebsiteImages updateImage(String id, WebsiteImages imageDetails) {
-        Optional<WebsiteImages> imageOpt = websiteImagesRepository.findById(id);
-        if (imageOpt.isPresent()) {
-
-            // Get from database
-
-            WebsiteImages image = imageOpt.get();
-            image.setTitle(imageDetails.getTitle());
-            image.setPostShortDescription(imageDetails.getPostShortDescription());
-            image.setDate(imageDetails.getDate());
-            image.setStatus(imageDetails.getStatus());
-            image.setTag(imageDetails.getTag());
-            image.setPlace(imageDetails.getPlace());
-            //image.setContent(imageDetails.getContent());
-            image.setPostSlug(imageDetails.getPostSlug());
-            image.setImage(imageDetails.getImage());
-            return websiteImagesRepository.save(image);
-        }
-        return null;
-    }
-
-    // Deleting
+        public WebsiteImages updateWebsiteImages(String id, WebsiteImages websiteImagesDetails) {
+            Optional<WebsiteImages> websiteImagesOpt = websiteImagesRepository.findById(id);
+            if (websiteImagesOpt.isPresent()) {
     
-    public void deleteImage(String id) {
-        websiteImagesRepository.deleteById(id);
-    }
-    // Save image in a local directory
+                // Get from database
+    
+                WebsiteImages websiteImages = websiteImagesOpt.get();
+                websiteImages.setTitle(websiteImagesDetails.getTitle());
+                websiteImages.setpostShortDescription(websiteImagesDetails.getpostShortDescription());
+                websiteImages.setDate(websiteImages.getDate());
+                websiteImages.setStatus(websiteImagesDetails.getStatus());
+                websiteImages.setTag(websiteImagesDetails.getTag());
+                websiteImages.setPlace(websiteImagesDetails.getPlace());
+                websiteImages.setContent(websiteImagesDetails.getContent());
+                websiteImages.setPostSlug(websiteImagesDetails.getPostSlug());
+                websiteImages.setimage(websiteImagesDetails.getimage());
+                return websiteImagesRepository.save(websiteImages);
+            }
+            return null;
+        }
+
+        // Deleting
+        
+        public void deleteWebsiteImages(String id) {
+            websiteImagesRepository.deleteById(id);
+        }
+
+           // Save image in a local directory
     public String saveImageToStorage(String uploadDirectory, MultipartFile imageFile) throws IOException {
         String uniqueFileName = UUID.randomUUID().toString() + "_" + imageFile.getOriginalFilename();
     
@@ -90,7 +93,6 @@ public class WebsiteImagesService {
             return null; // Handle missing images
         }
     }
-
 
     
 }
